@@ -1,0 +1,9 @@
+{
+    "name": "HatchyverseAPI",
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Newtonsoft.Json.dll",
+        "Firebase.Auth.dll",
+        "Google.dll"
+    ]
+}

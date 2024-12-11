@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id">
+  <string name="gcm_defaultSenderId" translatable="false">1021023377720</string>
+  <string name="google_storage_bucket" translatable="false">hatchyverse.firebasestorage.app</string>
+  <string name="project_id" translatable="false">hatchyverse</string>
+  <string name="google_api_key" translatable="false">AIzaSyA55w3ifGthvPLvCH4AEtm2NH8hXqeu4DY</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyA55w3ifGthvPLvCH4AEtm2NH8hXqeu4DY</string>
+  <string name="google_app_id" translatable="false">1:1021023377720:android:bc720123c876d2995449cd</string>
+  <string name="default_web_client_id" translatable="false">1021023377720-2bdjk1qq2m76pscnd2os4ambmfturkbk.apps.googleusercontent.com</string>
+</resources>
