@@ -56,14 +56,8 @@ with the
 * Download the Google Sign-in Unity SDK (version 1.0.4) from the
   [Google Sign in SDK](https://github.com/googlesamples/google-signin-unity/releases)
   website.
-  * Import the `google-signin-plugin-1.0.4.unitypackage` package.
-  * Remove `Assets/Parse` directory.
-  * Enable Android Auto-resolution when prompted.
-  * Apply Google Version Handler changes when prompted.
-  * Enable Android Gradle Templates when prompted.
-  * If you are targeting just Android Select `Assets/ExternalDependencyManager/Editor/1.2.183/Google.IOSResolver.dll` and disable Validate References in the inspector. Select `Assets/Firebase/Editor/Firebase.Editor.dll` and disable Validate References in the inspector.
-  * Change .srcaar to .aar in the google sign in support files in Assets\GoogleSignIn\Editor\m2repository\com\google\signin\google-signin-support\1.0.4\
-  * Click Assets -> External Dependency Manager -> Android Resolver -> Delete Resolved Libraries
+  * Import the `google-signin-plugin-1.0.4.unitypackage` package. **Important** Do not import the `Parse` folder.
+  * Disable Android Auto-Resolution and Resolution on Build.
   * Click Assets -> External Dependency Manager -> Android Resolver -> Resolve
 * Download the Newtonsoft.Json.dll from the
   [Newtonsoft.Json](https://www.newtonsoft.com/json) website.
@@ -206,6 +200,13 @@ public class AuthenticatedSceneScript : MonoBehaviour
 
 ## Troubleshooting (WIP)
 
+* Import Google Sign In
+  * Apply Google Version Handler changes when prompted.
+  * Enable Android Gradle Templates when prompted.
+  * If you are targeting just Android Select `Assets/ExternalDependencyManager/Editor/1.2.183/Google.IOSResolver.dll` and disable Validate References in the inspector. Select `Assets/Firebase/Editor/Firebase.Editor.dll` and disable Validate References in the inspector.
+  * Change .srcaar to .aar in the google sign in support files in Assets\GoogleSignIn\Editor\m2repository\com\google\signin\google-signin-support\1.0.4\
+  * Click Assets -> External Dependency Manager -> Android Resolver -> Delete Resolved Libraries
+  * Click Assets -> External Dependency Manager -> Android Resolver -> Resolve
 * The type "task" exist in both Unity.Tasks and mscorelib
   * goto: youProjectFolder\Assets\Parse\Plugins and remove all files outside of the dotNet45 Folder
 * Unable to find native-googlesignin
