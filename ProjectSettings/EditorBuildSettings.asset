@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Demo/AllAuthDemo.unity
+    path: Assets/Hatchyverse/Scenes/Demo/AllAuthDemo.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Demo/AuthenticatedScene.unity
+    path: Assets/Hatchyverse/Scenes/Demo/AuthenticatedScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

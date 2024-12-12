@@ -41,6 +41,8 @@ namespace HatchyverseAPI.Model
         /// <param name="uid">uid (required).</param>
         /// <param name="name">name (required).</param>
         /// <param name="description">description (required).</param>
+        /// <param name="itchioEmbedLink">itchioEmbedLink.</param>
+        /// <param name="itchioLink">itchioLink.</param>
         /// <param name="status">status.</param>
         /// <param name="requirement">requirement.</param>
         /// <param name="views">views.</param>
@@ -51,7 +53,7 @@ namespace HatchyverseAPI.Model
         /// <param name="downloadLink">downloadLink.</param>
         /// <param name="androidLink">androidLink.</param>
         /// <param name="iosLink">iosLink.</param>
-        public Game(string uid = default(string), string name = default(string), string description = default(string), string status = default(string), string requirement = default(string), double views = default(double), string slug = default(string), string deeplink = default(string), string previewImage = default(string), List<string> images = default(List<string>), string downloadLink = default(string), string androidLink = default(string), string iosLink = default(string))
+        public Game(string uid = default(string), string name = default(string), string description = default(string), string itchioEmbedLink = default(string), string itchioLink = default(string), string status = default(string), string requirement = default(string), double views = default(double), string slug = default(string), string deeplink = default(string), string previewImage = default(string), List<string> images = default(List<string>), string downloadLink = default(string), string androidLink = default(string), string iosLink = default(string))
         {
             // to ensure "uid" is required (not null)
             if (uid == null)
@@ -71,6 +73,8 @@ namespace HatchyverseAPI.Model
                 throw new ArgumentNullException("description is a required property for Game and cannot be null");
             }
             this.Description = description;
+            this.ItchioEmbedLink = itchioEmbedLink;
+            this.ItchioLink = itchioLink;
             this.Status = status;
             this.Requirement = requirement;
             this.Views = views;
@@ -100,6 +104,18 @@ namespace HatchyverseAPI.Model
         /// </summary>
         [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
         public string Description { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ItchioEmbedLink
+        /// </summary>
+        [DataMember(Name = "itchioEmbedLink", EmitDefaultValue = false)]
+        public string ItchioEmbedLink { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ItchioLink
+        /// </summary>
+        [DataMember(Name = "itchioLink", EmitDefaultValue = false)]
+        public string ItchioLink { get; set; }
 
         /// <summary>
         /// Gets or Sets Status
@@ -172,6 +188,8 @@ namespace HatchyverseAPI.Model
             sb.Append("  Uid: ").Append(Uid).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  ItchioEmbedLink: ").Append(ItchioEmbedLink).Append("\n");
+            sb.Append("  ItchioLink: ").Append(ItchioLink).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Requirement: ").Append(Requirement).Append("\n");
             sb.Append("  Views: ").Append(Views).Append("\n");

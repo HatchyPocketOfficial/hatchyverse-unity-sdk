@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using Firebase.Auth;
 using Firebase.Extensions;
-using Firebase.Firestore;
 using System.Collections.Generic;
 using TMPro;
 using Google;
@@ -21,7 +20,6 @@ public class FirebaseManager : MonoBehaviour
     private const string USERS_COLLECTION = "users";
 
     private FirebaseAuth auth;
-    private FirebaseFirestore db;
     private FirebaseUser user;
     private bool isProcessing = false;
 
@@ -110,7 +108,6 @@ public class FirebaseManager : MonoBehaviour
     private void InitializeFirebase()
     {
         auth = FirebaseAuth.DefaultInstance;
-        db = FirebaseFirestore.DefaultInstance;
         ResetAllButtonStates();
     }
 

@@ -8,25 +8,21 @@ with the
 
 ## Requirements
 
-* [Unity](http://unity3d.com/) The quickstart project requires 2019 or higher.
+* [Unity](http://unity3d.com/) The quickstart project requires 2022 or higher.
 * [Android SDK](https://developer.android.com/studio/index.html#downloads)
   (when developing for Android).
+* Minimum Android API level 31.
 
-## Building the Sample
-
-### iOS
-
-    - `GoogleService-Info.plist` for iOS.
+## Configure Hatchyverse in your Unity project
 
 ### Android
 
-* Provide App Info to Hatchyverse Team (<hatchypocket@gmail.com>)
+* Provide your App Bundle along with the SHA1 to Hatchyverse Team (<hatchypocket@gmail.com>)
   * Provide your App Bundle (e.g. `com.hatchyverse.rampage.dev`) to Hatchyverse Team .
     * Select the **File > Build Settings** menu option.
     * Select **Android** in the **Platform** list.
     * Click **Player Settings**.
-    * In the **Settings for Android** panel scroll down to
-      **Bundle Identifier** and you will see the Android package name or if it is empty you can fill it with your desired package name.
+    * In the **Settings for Android** panel scroll down to **Other Settings** and to **Identification** and you will see the Android package name or if it is empty you can fill it with your desired package name. (e.g. `com.hatchyverse.packagetest`)
   * Android apps must be signed by a key, in order to get it you will need to set the keystore in the Unity project.
     * Locate the **Publishing Settings** under **Player Settings** in the
       Unity editor.
@@ -41,14 +37,13 @@ with the
         keytool -list -v -keystore <path_to_keystore> -alias <key_name>
         ```
 
-    * Send the SHA1 digest string to Hatchyverse Team.
 * Obtain your app configuration files from Hatchyverse Team
   * `google-services.json` for Android.
     * Place the `google-services.json` file in the `Assets` directory.
     * NOTE: `google-services.json` can be placed anywhere under the `Assets`
       folder.
   * `hatchyverse-config.json`
-    * Place the `hatchyverse-config.json` file in the `StreamingAssets` directory. If the directory does not exist, create it.
+    * Place the `hatchyverse-config.json` file in the `Assets/StreamingAssets` directory. If the directory does not exist, create it.
 * Download the
   [Firebase Unity SDK](https://firebase.google.com/download/unity)
   and unzip it somewhere convenient.
@@ -61,20 +56,24 @@ with the
 * Download the Google Sign-in Unity SDK (version 1.0.4) from the
   [Google Sign in SDK](https://github.com/googlesamples/google-signin-unity/releases)
   website.
-  * Place the `google-signin-sdk-4.0.0` directory in the `Assets` directory.
+  * Import the `google-signin-plugin-1.0.4.unitypackage` package.
+  * Remove `Assets/Parse` directory.
+  * Enable Android Auto-resolution when prompted.
+  * Apply Google Version Handler changes when prompted.
+  * Enable Android Gradle Templates when prompted.
+  * If you are targeting just Android Select `Assets/ExternalDependencyManager/Editor/1.2.183/Google.IOSResolver.dll` and disable Validate References in the inspector. Select `Assets/Firebase/Editor/Firebase.Editor.dll` and disable Validate References in the inspector.
+  * Change .srcaar to .aar in the google sign in support files in Assets\GoogleSignIn\Editor\m2repository\com\google\signin\google-signin-support\1.0.4\
+  * Click Assets -> External Dependency Manager -> Android Resolver -> Delete Resolved Libraries
+  * Click Assets -> External Dependency Manager -> Android Resolver -> Resolve
 * Download the Newtonsoft.Json.dll from the
   [Newtonsoft.Json](https://www.newtonsoft.com/json) website.
-  * Place the dll located in `Bin/netstandard2.0/Newtonsoft.Json.dll` file in the `Assets` directory.
+  * Place the dll located in `lib/netstandard2.0/Newtonsoft.Json.dll` file in the `Assets` directory.
 * Download the hatchyverse-unity-sdk unity package from the repository and import it as custom package on Unity
-* Build for Android.
-  * Select the **File > Build Settings** menu option.
-  * Select **Android** in the **Platform** list.
-  * Click **Switch Platform** to select **Android** as the target platform.
-  * Wait for the spinner (compiling) icon to stop in the bottom right corner
-    of the Unity status bar.
-  * Click **Build and Run**.
-* See the **Using the Sample** section below.
+* Now you can add the AllAuthDemo Sample Scene located in `Assets/Hatchyverse/Scenes/AllAuthDemo.unity` and build for android.
 
+### iOS (WIP)
+
+  *`GoogleService-Info.plist` for iOS.
 
 ## Using the Auth
 

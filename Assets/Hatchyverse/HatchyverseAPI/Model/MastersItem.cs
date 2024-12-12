@@ -25,22 +25,22 @@ using OpenAPIDateConverter = HatchyverseAPI.Client.OpenAPIDateConverter;
 namespace HatchyverseAPI.Model
 {
     /// <summary>
-    /// MastersItemBalance
+    /// MastersItem
     /// </summary>
-    [DataContract(Name = "MastersItemBalance")]
-    public partial class MastersItemBalance
+    [DataContract(Name = "MastersItem")]
+    public partial class MastersItem
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="MastersItemBalance" /> class.
+        /// Initializes a new instance of the <see cref="MastersItem" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected MastersItemBalance() { }
+        protected MastersItem() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="MastersItemBalance" /> class.
+        /// Initializes a new instance of the <see cref="MastersItem" /> class.
         /// </summary>
         /// <param name="id">id (required).</param>
-        /// <param name="createdAt">createdAt (default to &quot;2024-12-09T18:10:34.270Z&quot;).</param>
-        /// <param name="updatedAt">updatedAt (default to &quot;2024-12-09T18:10:34.270Z&quot;).</param>
+        /// <param name="createdAt">createdAt (default to &quot;2024-12-12T00:24:34.702Z&quot;).</param>
+        /// <param name="updatedAt">updatedAt (default to &quot;2024-12-12T00:24:34.702Z&quot;).</param>
         /// <param name="name">name (required).</param>
         /// <param name="category">category (required).</param>
         /// <param name="gender">gender.</param>
@@ -52,29 +52,27 @@ namespace HatchyverseAPI.Model
         /// <param name="rarity">rarity.</param>
         /// <param name="effects">effects.</param>
         /// <param name="storyNotes">storyNotes.</param>
-        /// <param name="balance">balance (required).</param>
-        public MastersItemBalance(double id = default(double), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime), string name = default(string), ItemCategory category = default(ItemCategory), TraitGender gender = default(TraitGender), string description = default(string), string image = default(string), string frontImage = default(string), string backImage = default(string), string maskImage = default(string), string rarity = default(string), string effects = default(string), string storyNotes = default(string), double balance = default(double))
+        public MastersItem(double id = default(double), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime), string name = default(string), ItemCategory category = default(ItemCategory), TraitGender gender = default(TraitGender), string description = default(string), string image = default(string), string frontImage = default(string), string backImage = default(string), string maskImage = default(string), string rarity = default(string), string effects = default(string), string storyNotes = default(string))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
             if (name == null)
             {
-                throw new ArgumentNullException("name is a required property for MastersItemBalance and cannot be null");
+                throw new ArgumentNullException("name is a required property for MastersItem and cannot be null");
             }
             this.Name = name;
             // to ensure "category" is required (not null)
             if (category == null)
             {
-                throw new ArgumentNullException("category is a required property for MastersItemBalance and cannot be null");
+                throw new ArgumentNullException("category is a required property for MastersItem and cannot be null");
             }
             this.Category = category;
             // to ensure "image" is required (not null)
             if (image == null)
             {
-                throw new ArgumentNullException("image is a required property for MastersItemBalance and cannot be null");
+                throw new ArgumentNullException("image is a required property for MastersItem and cannot be null");
             }
             this.Image = image;
-            this.Balance = balance;
             this.CreatedAt = createdAt;
             this.UpdatedAt = updatedAt;
             this.Gender = gender;
@@ -172,19 +170,13 @@ namespace HatchyverseAPI.Model
         public string StoryNotes { get; set; }
 
         /// <summary>
-        /// Gets or Sets Balance
-        /// </summary>
-        [DataMember(Name = "balance", IsRequired = true, EmitDefaultValue = true)]
-        public double Balance { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class MastersItemBalance {\n");
+            sb.Append("class MastersItem {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");
@@ -199,7 +191,6 @@ namespace HatchyverseAPI.Model
             sb.Append("  Rarity: ").Append(Rarity).Append("\n");
             sb.Append("  Effects: ").Append(Effects).Append("\n");
             sb.Append("  StoryNotes: ").Append(StoryNotes).Append("\n");
-            sb.Append("  Balance: ").Append(Balance).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
