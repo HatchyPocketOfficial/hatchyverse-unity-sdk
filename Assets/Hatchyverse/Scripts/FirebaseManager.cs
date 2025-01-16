@@ -13,6 +13,7 @@ using System.Linq;
 
 using HatchyverseAPI.Api;
 using HatchyverseAPI.Client;
+using HatchyverseAPI.Model;
 
 public class FirebaseManager : MonoBehaviour
 {
@@ -528,7 +529,7 @@ public class FirebaseManager : MonoBehaviour
     {
         try
         {
-            await authApi.CreateUserAsync();
+            await authApi.CreateUserAsync(new CreateUserRequest());
             /*
             DocumentReference userDoc = db.Collection(USERS_COLLECTION).Document(firebaseUser.UserId);
 

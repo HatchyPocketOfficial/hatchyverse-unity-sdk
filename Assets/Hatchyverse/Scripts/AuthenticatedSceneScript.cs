@@ -43,4 +43,12 @@ public class AuthenticatedSceneScript : MonoBehaviour
         Debug.Log(HatchyverseConfig.DefaultConfig.appId);
         await leaderboardApi.AddScoreAsync(new AddScoreRequest("", "", 10, HatchyverseConfig.DefaultConfig.appId));
     }
+
+    public async void PostRank()
+    {
+        Debug.Log("OnGetUserInfo");
+        Debug.Log(HatchyverseConfig.DefaultConfig.appId);
+        var userInfo = await usersApi.GetUserAsync();
+        await leaderboardApi.UpdateRankAsync(new UpdateRankRequest(userInfo.Uid, 10, HatchyverseConfig.DefaultConfig.appId));
+    }
 }

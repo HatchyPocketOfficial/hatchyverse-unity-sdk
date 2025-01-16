@@ -12,6 +12,7 @@ namespace HatchyverseAPI.Client
     public string hatchyverseAppId;
     public string googleWebClientId;
     public string apiBaseURL;
+    public string apiKey;
   }
 
   public class HatchyverseConfig
@@ -35,7 +36,11 @@ namespace HatchyverseAPI.Client
             apiConfiguration = new Configuration
             {
               BasePath = jsonConfig.apiBaseURL,
-              TempFolderPath = tempFolderPath
+              TempFolderPath = tempFolderPath,
+              DefaultHeaders = new System.Collections.Generic.Dictionary<string, string>
+              {
+                { "x-api-key", jsonConfig.apiKey }
+              },
             },
             googleConfiguration = new GoogleSignInConfiguration
             {

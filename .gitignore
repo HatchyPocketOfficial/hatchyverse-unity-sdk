@@ -77,3 +77,4 @@ Hatchyverse API_BurstDebugInformation_DoNotShip
 **/google-services.json
 **/google-services-desktop.json
 **/hatchyverse-config-prod.json
+**/hatchyverse-config-dev.json
