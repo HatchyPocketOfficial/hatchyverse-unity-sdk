@@ -38,34 +38,31 @@ namespace HatchyverseAPI.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AddScoreRequest" /> class.
         /// </summary>
-        /// <param name="clientId">clientId.</param>
-        /// <param name="apiKey">apiKey.</param>
+        /// <param name="email">email (required).</param>
         /// <param name="score">score (required).</param>
-        /// <param name="gameId">gameId (required).</param>
-        public AddScoreRequest(string clientId = default(string), string apiKey = default(string), double score = default(double), string gameId = default(string))
+        /// <param name="appId">appId (required).</param>
+        public AddScoreRequest(string email = default(string), double score = default(double), string appId = default(string))
         {
-            this.Score = score;
-            // to ensure "gameId" is required (not null)
-            if (gameId == null)
+            // to ensure "email" is required (not null)
+            if (email == null)
             {
-                throw new ArgumentNullException("gameId is a required property for AddScoreRequest and cannot be null");
+                throw new ArgumentNullException("email is a required property for AddScoreRequest and cannot be null");
             }
-            this.GameId = gameId;
-            this.ClientId = clientId;
-            this.ApiKey = apiKey;
+            this.Email = email;
+            this.Score = score;
+            // to ensure "appId" is required (not null)
+            if (appId == null)
+            {
+                throw new ArgumentNullException("appId is a required property for AddScoreRequest and cannot be null");
+            }
+            this.AppId = appId;
         }
 
         /// <summary>
-        /// Gets or Sets ClientId
+        /// Gets or Sets Email
         /// </summary>
-        [DataMember(Name = "clientId", EmitDefaultValue = false)]
-        public string ClientId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ApiKey
-        /// </summary>
-        [DataMember(Name = "apiKey", EmitDefaultValue = false)]
-        public string ApiKey { get; set; }
+        [DataMember(Name = "email", IsRequired = true, EmitDefaultValue = true)]
+        public string Email { get; set; }
 
         /// <summary>
         /// Gets or Sets Score
@@ -74,10 +71,10 @@ namespace HatchyverseAPI.Model
         public double Score { get; set; }
 
         /// <summary>
-        /// Gets or Sets GameId
+        /// Gets or Sets AppId
         /// </summary>
-        [DataMember(Name = "gameId", IsRequired = true, EmitDefaultValue = true)]
-        public string GameId { get; set; }
+        [DataMember(Name = "appId", IsRequired = true, EmitDefaultValue = true)]
+        public string AppId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -87,10 +84,9 @@ namespace HatchyverseAPI.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class AddScoreRequest {\n");
-            sb.Append("  ClientId: ").Append(ClientId).Append("\n");
-            sb.Append("  ApiKey: ").Append(ApiKey).Append("\n");
+            sb.Append("  Email: ").Append(Email).Append("\n");
             sb.Append("  Score: ").Append(Score).Append("\n");
-            sb.Append("  GameId: ").Append(GameId).Append("\n");
+            sb.Append("  AppId: ").Append(AppId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -41,10 +41,10 @@ namespace HatchyverseAPI.Model
         /// <param name="lootbox">lootbox.</param>
         /// <param name="currency">currency (required).</param>
         /// <param name="price">price (required).</param>
-        /// <param name="decimals">decimals (required).</param>
-        /// <param name="address">address (required).</param>
-        /// <param name="image">image (required).</param>
-        public LootboxPrice(MastersLootbox lootbox = default(MastersLootbox), string currency = default(string), string price = default(string), double decimals = default(double), string address = default(string), string image = default(string))
+        /// <param name="decimals">decimals.</param>
+        /// <param name="address">address.</param>
+        /// <param name="image">image.</param>
+        public LootboxPrice(double lootbox = default(double), string currency = default(string), string price = default(string), double? decimals = default(double?), string address = default(string), string image = default(string))
         {
             // to ensure "currency" is required (not null)
             if (currency == null)
@@ -58,27 +58,17 @@ namespace HatchyverseAPI.Model
                 throw new ArgumentNullException("price is a required property for LootboxPrice and cannot be null");
             }
             this.Price = price;
-            this.Decimals = decimals;
-            // to ensure "address" is required (not null)
-            if (address == null)
-            {
-                throw new ArgumentNullException("address is a required property for LootboxPrice and cannot be null");
-            }
-            this.Address = address;
-            // to ensure "image" is required (not null)
-            if (image == null)
-            {
-                throw new ArgumentNullException("image is a required property for LootboxPrice and cannot be null");
-            }
-            this.Image = image;
             this.Lootbox = lootbox;
+            this.Decimals = decimals;
+            this.Address = address;
+            this.Image = image;
         }
 
         /// <summary>
         /// Gets or Sets Lootbox
         /// </summary>
         [DataMember(Name = "lootbox", EmitDefaultValue = false)]
-        public MastersLootbox Lootbox { get; set; }
+        public double Lootbox { get; set; }
 
         /// <summary>
         /// Gets or Sets Currency
@@ -95,19 +85,19 @@ namespace HatchyverseAPI.Model
         /// <summary>
         /// Gets or Sets Decimals
         /// </summary>
-        [DataMember(Name = "decimals", IsRequired = true, EmitDefaultValue = true)]
-        public double Decimals { get; set; }
+        [DataMember(Name = "decimals", EmitDefaultValue = true)]
+        public double? Decimals { get; set; }
 
         /// <summary>
         /// Gets or Sets Address
         /// </summary>
-        [DataMember(Name = "address", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "address", EmitDefaultValue = true)]
         public string Address { get; set; }
 
         /// <summary>
         /// Gets or Sets Image
         /// </summary>
-        [DataMember(Name = "image", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "image", EmitDefaultValue = true)]
         public string Image { get; set; }
 
         /// <summary>

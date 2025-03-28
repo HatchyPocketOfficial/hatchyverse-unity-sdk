@@ -39,8 +39,8 @@ namespace HatchyverseAPI.Model
         /// Initializes a new instance of the <see cref="MastersTrait" /> class.
         /// </summary>
         /// <param name="id">id (required).</param>
-        /// <param name="createdAt">createdAt (default to &quot;2025-01-16T04:23:17.905Z&quot;).</param>
-        /// <param name="updatedAt">updatedAt (default to &quot;2025-01-16T04:23:17.905Z&quot;).</param>
+        /// <param name="createdAt">createdAt (default to &quot;2025-03-27T23:54:14.636Z&quot;).</param>
+        /// <param name="updatedAt">updatedAt (default to &quot;2025-03-27T23:54:14.637Z&quot;).</param>
         /// <param name="name">name (required).</param>
         /// <param name="image">image (required).</param>
         /// <param name="frontImage">frontImage.</param>

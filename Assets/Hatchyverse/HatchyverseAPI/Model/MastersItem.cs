@@ -39,8 +39,8 @@ namespace HatchyverseAPI.Model
         /// Initializes a new instance of the <see cref="MastersItem" /> class.
         /// </summary>
         /// <param name="id">id (required).</param>
-        /// <param name="createdAt">createdAt (default to &quot;2025-01-16T04:23:17.918Z&quot;).</param>
-        /// <param name="updatedAt">updatedAt (default to &quot;2025-01-16T04:23:17.918Z&quot;).</param>
+        /// <param name="createdAt">createdAt (required).</param>
+        /// <param name="updatedAt">updatedAt (required).</param>
         /// <param name="name">name (required).</param>
         /// <param name="category">category (required).</param>
         /// <param name="gender">gender.</param>
@@ -52,9 +52,21 @@ namespace HatchyverseAPI.Model
         /// <param name="rarity">rarity.</param>
         /// <param name="effects">effects.</param>
         /// <param name="storyNotes">storyNotes.</param>
-        public MastersItem(double id = default(double), DateTime createdAt = default(DateTime), DateTime updatedAt = default(DateTime), string name = default(string), ItemCategory category = default(ItemCategory), TraitGender gender = default(TraitGender), string description = default(string), string image = default(string), string frontImage = default(string), string backImage = default(string), string maskImage = default(string), string rarity = default(string), string effects = default(string), string storyNotes = default(string))
+        public MastersItem(double id = default(double), string createdAt = default(string), string updatedAt = default(string), string name = default(string), ItemCategory category = default(ItemCategory), TraitGender gender = default(TraitGender), string description = default(string), string image = default(string), string frontImage = default(string), string backImage = default(string), string maskImage = default(string), string rarity = default(string), string effects = default(string), string storyNotes = default(string))
         {
             this.Id = id;
+            // to ensure "createdAt" is required (not null)
+            if (createdAt == null)
+            {
+                throw new ArgumentNullException("createdAt is a required property for MastersItem and cannot be null");
+            }
+            this.CreatedAt = createdAt;
+            // to ensure "updatedAt" is required (not null)
+            if (updatedAt == null)
+            {
+                throw new ArgumentNullException("updatedAt is a required property for MastersItem and cannot be null");
+            }
+            this.UpdatedAt = updatedAt;
             // to ensure "name" is required (not null)
             if (name == null)
             {
@@ -73,8 +85,6 @@ namespace HatchyverseAPI.Model
                 throw new ArgumentNullException("image is a required property for MastersItem and cannot be null");
             }
             this.Image = image;
-            this.CreatedAt = createdAt;
-            this.UpdatedAt = updatedAt;
             this.Gender = gender;
             this.Description = description;
             this.FrontImage = frontImage;
@@ -94,14 +104,14 @@ namespace HatchyverseAPI.Model
         /// <summary>
         /// Gets or Sets CreatedAt
         /// </summary>
-        [DataMember(Name = "createdAt", EmitDefaultValue = false)]
-        public DateTime CreatedAt { get; set; }
+        [DataMember(Name = "createdAt", IsRequired = true, EmitDefaultValue = true)]
+        public string CreatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets UpdatedAt
         /// </summary>
-        [DataMember(Name = "updatedAt", EmitDefaultValue = false)]
-        public DateTime UpdatedAt { get; set; }
+        [DataMember(Name = "updatedAt", IsRequired = true, EmitDefaultValue = true)]
+        public string UpdatedAt { get; set; }
 
         /// <summary>
         /// Gets or Sets Name
@@ -118,13 +128,13 @@ namespace HatchyverseAPI.Model
         /// <summary>
         /// Gets or Sets Gender
         /// </summary>
-        [DataMember(Name = "gender", EmitDefaultValue = false)]
+        [DataMember(Name = "gender", EmitDefaultValue = true)]
         public TraitGender Gender { get; set; }
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", EmitDefaultValue = false)]
+        [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
@@ -136,37 +146,37 @@ namespace HatchyverseAPI.Model
         /// <summary>
         /// Gets or Sets FrontImage
         /// </summary>
-        [DataMember(Name = "frontImage", EmitDefaultValue = false)]
+        [DataMember(Name = "frontImage", EmitDefaultValue = true)]
         public string FrontImage { get; set; }
 
         /// <summary>
         /// Gets or Sets BackImage
         /// </summary>
-        [DataMember(Name = "backImage", EmitDefaultValue = false)]
+        [DataMember(Name = "backImage", EmitDefaultValue = true)]
         public string BackImage { get; set; }
 
         /// <summary>
         /// Gets or Sets MaskImage
         /// </summary>
-        [DataMember(Name = "maskImage", EmitDefaultValue = false)]
+        [DataMember(Name = "maskImage", EmitDefaultValue = true)]
         public string MaskImage { get; set; }
 
         /// <summary>
         /// Gets or Sets Rarity
         /// </summary>
-        [DataMember(Name = "rarity", EmitDefaultValue = false)]
+        [DataMember(Name = "rarity", EmitDefaultValue = true)]
         public string Rarity { get; set; }
 
         /// <summary>
         /// Gets or Sets Effects
         /// </summary>
-        [DataMember(Name = "effects", EmitDefaultValue = false)]
+        [DataMember(Name = "effects", EmitDefaultValue = true)]
         public string Effects { get; set; }
 
         /// <summary>
         /// Gets or Sets StoryNotes
         /// </summary>
-        [DataMember(Name = "storyNotes", EmitDefaultValue = false)]
+        [DataMember(Name = "storyNotes", EmitDefaultValue = true)]
         public string StoryNotes { get; set; }
 
         /// <summary>

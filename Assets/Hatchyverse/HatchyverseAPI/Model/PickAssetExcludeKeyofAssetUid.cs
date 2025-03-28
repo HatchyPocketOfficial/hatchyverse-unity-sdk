@@ -96,14 +96,15 @@ namespace HatchyverseAPI.Model
         /// </summary>
         /// <param name="name">name (required).</param>
         /// <param name="category">category (required).</param>
-        /// <param name="description">description (required).</param>
+        /// <param name="description">description.</param>
         /// <param name="contract">contract.</param>
         /// <param name="holder">holder.</param>
         /// <param name="contractType">contractType.</param>
         /// <param name="tokenId">tokenId.</param>
         /// <param name="type">type.</param>
+        /// <param name="property">property.</param>
         /// <param name="image">image (required).</param>
-        public PickAssetExcludeKeyofAssetUid(string name = default(string), string category = default(string), string description = default(string), string contract = default(string), string holder = default(string), ContractTypeEnum? contractType = default(ContractTypeEnum?), string tokenId = default(string), TypeEnum? type = default(TypeEnum?), string image = default(string))
+        public PickAssetExcludeKeyofAssetUid(string name = default(string), string category = default(string), string description = default(string), string contract = default(string), string holder = default(string), ContractTypeEnum? contractType = default(ContractTypeEnum?), string tokenId = default(string), TypeEnum? type = default(TypeEnum?), string property = default(string), string image = default(string))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -117,23 +118,19 @@ namespace HatchyverseAPI.Model
                 throw new ArgumentNullException("category is a required property for PickAssetExcludeKeyofAssetUid and cannot be null");
             }
             this.Category = category;
-            // to ensure "description" is required (not null)
-            if (description == null)
-            {
-                throw new ArgumentNullException("description is a required property for PickAssetExcludeKeyofAssetUid and cannot be null");
-            }
-            this.Description = description;
             // to ensure "image" is required (not null)
             if (image == null)
             {
                 throw new ArgumentNullException("image is a required property for PickAssetExcludeKeyofAssetUid and cannot be null");
             }
             this.Image = image;
+            this.Description = description;
             this.Contract = contract;
             this.Holder = holder;
             this.ContractType = contractType;
             this.TokenId = tokenId;
             this.Type = type;
+            this.Property = property;
         }
 
         /// <summary>
@@ -151,7 +148,7 @@ namespace HatchyverseAPI.Model
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name = "description", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
         /// <summary>
@@ -171,6 +168,12 @@ namespace HatchyverseAPI.Model
         /// </summary>
         [DataMember(Name = "tokenId", EmitDefaultValue = false)]
         public string TokenId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Property
+        /// </summary>
+        [DataMember(Name = "property", EmitDefaultValue = false)]
+        public string Property { get; set; }
 
         /// <summary>
         /// Gets or Sets Image
@@ -194,6 +197,7 @@ namespace HatchyverseAPI.Model
             sb.Append("  ContractType: ").Append(ContractType).Append("\n");
             sb.Append("  TokenId: ").Append(TokenId).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Property: ").Append(Property).Append("\n");
             sb.Append("  Image: ").Append(Image).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

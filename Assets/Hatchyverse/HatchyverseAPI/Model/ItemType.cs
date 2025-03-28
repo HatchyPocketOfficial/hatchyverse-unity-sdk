@@ -41,7 +41,7 @@ namespace HatchyverseAPI.Model
         /// <param name="id">id (required).</param>
         /// <param name="name">name (required).</param>
         /// <param name="layers">layers (required).</param>
-        /// <param name="categories">categories (required).</param>
+        /// <param name="categories">categories.</param>
         public ItemType(double id = default(double), string name = default(string), List<ItemLayer> layers = default(List<ItemLayer>), List<ItemCategory> categories = default(List<ItemCategory>))
         {
             this.Id = id;
@@ -57,11 +57,6 @@ namespace HatchyverseAPI.Model
                 throw new ArgumentNullException("layers is a required property for ItemType and cannot be null");
             }
             this.Layers = layers;
-            // to ensure "categories" is required (not null)
-            if (categories == null)
-            {
-                throw new ArgumentNullException("categories is a required property for ItemType and cannot be null");
-            }
             this.Categories = categories;
         }
 
@@ -86,7 +81,7 @@ namespace HatchyverseAPI.Model
         /// <summary>
         /// Gets or Sets Categories
         /// </summary>
-        [DataMember(Name = "categories", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "categories", EmitDefaultValue = false)]
         public List<ItemCategory> Categories { get; set; }
 
         /// <summary>

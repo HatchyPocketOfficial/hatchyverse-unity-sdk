@@ -43,7 +43,7 @@ namespace HatchyverseAPI.Model
         /// <param name="order">order (required).</param>
         /// <param name="layer">layer (required).</param>
         /// <param name="type">type (required).</param>
-        public ItemLayer(double id = default(double), string name = default(string), double order = default(double), string layer = default(string), ItemType type = default(ItemType))
+        public ItemLayer(double id = default(double), string name = default(string), double order = default(double), string layer = default(string), double type = default(double))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -59,11 +59,6 @@ namespace HatchyverseAPI.Model
                 throw new ArgumentNullException("layer is a required property for ItemLayer and cannot be null");
             }
             this.Layer = layer;
-            // to ensure "type" is required (not null)
-            if (type == null)
-            {
-                throw new ArgumentNullException("type is a required property for ItemLayer and cannot be null");
-            }
             this.Type = type;
         }
 
@@ -95,7 +90,7 @@ namespace HatchyverseAPI.Model
         /// Gets or Sets Type
         /// </summary>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
-        public ItemType Type { get; set; }
+        public double Type { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object

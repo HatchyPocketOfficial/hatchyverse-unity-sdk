@@ -44,12 +44,12 @@ namespace HatchyverseAPI.Model
         /// <param name="image">image (required).</param>
         /// <param name="order">order (required).</param>
         /// <param name="chainId">chainId (required).</param>
-        /// <param name="gameId">gameId.</param>
+        /// <param name="gameId">gameId (required).</param>
         /// <param name="genderId">genderId (required).</param>
         /// <param name="ticketId">ticketId (required).</param>
         /// <param name="itemWeights">itemWeights (required).</param>
         /// <param name="prices">prices (required).</param>
-        public MastersLootbox(double id = default(double), string name = default(string), bool active = default(bool), string image = default(string), double order = default(double), double chainId = default(double), string gameId = default(string), double genderId = default(double), double ticketId = default(double), List<MastersLootboxItem> itemWeights = default(List<MastersLootboxItem>), List<LootboxPrice> prices = default(List<LootboxPrice>))
+        public MastersLootbox(double id = default(double), string name = default(string), bool active = default(bool), string image = default(string), double order = default(double), double? chainId = default(double?), string gameId = default(string), double genderId = default(double), double? ticketId = default(double?), List<MastersLootboxItem> itemWeights = default(List<MastersLootboxItem>), List<LootboxPrice> prices = default(List<LootboxPrice>))
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -66,8 +66,24 @@ namespace HatchyverseAPI.Model
             }
             this.Image = image;
             this.Order = order;
+            // to ensure "chainId" is required (not null)
+            if (chainId == null)
+            {
+                throw new ArgumentNullException("chainId is a required property for MastersLootbox and cannot be null");
+            }
             this.ChainId = chainId;
+            // to ensure "gameId" is required (not null)
+            if (gameId == null)
+            {
+                throw new ArgumentNullException("gameId is a required property for MastersLootbox and cannot be null");
+            }
+            this.GameId = gameId;
             this.GenderId = genderId;
+            // to ensure "ticketId" is required (not null)
+            if (ticketId == null)
+            {
+                throw new ArgumentNullException("ticketId is a required property for MastersLootbox and cannot be null");
+            }
             this.TicketId = ticketId;
             // to ensure "itemWeights" is required (not null)
             if (itemWeights == null)
@@ -81,7 +97,6 @@ namespace HatchyverseAPI.Model
                 throw new ArgumentNullException("prices is a required property for MastersLootbox and cannot be null");
             }
             this.Prices = prices;
-            this.GameId = gameId;
         }
 
         /// <summary>
@@ -118,12 +133,12 @@ namespace HatchyverseAPI.Model
         /// Gets or Sets ChainId
         /// </summary>
         [DataMember(Name = "chainId", IsRequired = true, EmitDefaultValue = true)]
-        public double ChainId { get; set; }
+        public double? ChainId { get; set; }
 
         /// <summary>
         /// Gets or Sets GameId
         /// </summary>
-        [DataMember(Name = "gameId", EmitDefaultValue = false)]
+        [DataMember(Name = "gameId", IsRequired = true, EmitDefaultValue = true)]
         public string GameId { get; set; }
 
         /// <summary>
@@ -136,7 +151,7 @@ namespace HatchyverseAPI.Model
         /// Gets or Sets TicketId
         /// </summary>
         [DataMember(Name = "ticketId", IsRequired = true, EmitDefaultValue = true)]
-        public double TicketId { get; set; }
+        public double? TicketId { get; set; }
 
         /// <summary>
         /// Gets or Sets ItemWeights

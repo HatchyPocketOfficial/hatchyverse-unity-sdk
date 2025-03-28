@@ -30,6 +30,22 @@ namespace HatchyverseAPI.Api
         /// 
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;HatchyBalance&gt;</returns>
+        List<HatchyBalance> GetGen2Balance();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;HatchyBalance&gt;</returns>
+        ApiResponse<List<HatchyBalance>> GetGen2BalanceWithHttpInfo();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>GetGen2SalePrice200Response</returns>
         GetGen2SalePrice200Response GetGen2SalePrice();
 
@@ -69,6 +85,27 @@ namespace HatchyverseAPI.Api
     public interface IGen2ApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;HatchyBalance&gt;</returns>
+        System.Threading.Tasks.Task<List<HatchyBalance>> GetGen2BalanceAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;HatchyBalance&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<HatchyBalance>>> GetGen2BalanceWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -255,6 +292,118 @@ namespace HatchyverseAPI.Api
                 return _exceptionFactory;
             }
             set { _exceptionFactory = value; }
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;HatchyBalance&gt;</returns>
+        public List<HatchyBalance> GetGen2Balance()
+        {
+            HatchyverseAPI.Client.ApiResponse<List<HatchyBalance>> localVarResponse = GetGen2BalanceWithHttpInfo();
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;HatchyBalance&gt;</returns>
+        public HatchyverseAPI.Client.ApiResponse<List<HatchyBalance>> GetGen2BalanceWithHttpInfo()
+        {
+            HatchyverseAPI.Client.RequestOptions localVarRequestOptions = new HatchyverseAPI.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = HatchyverseAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = HatchyverseAPI.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<List<HatchyBalance>>("/gen2/balance", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetGen2Balance", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of List&lt;HatchyBalance&gt;</returns>
+        public async System.Threading.Tasks.Task<List<HatchyBalance>> GetGen2BalanceAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            var task = GetGen2BalanceWithHttpInfoAsync(cancellationToken);
+#if UNITY_EDITOR || !UNITY_WEBGL
+            HatchyverseAPI.Client.ApiResponse<List<HatchyBalance>> localVarResponse = await task.ConfigureAwait(false);
+#else
+            HatchyverseAPI.Client.ApiResponse<List<HatchyBalance>> localVarResponse = await task;
+#endif
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (List&lt;HatchyBalance&gt;)</returns>
+        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<List<HatchyBalance>>> GetGen2BalanceWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            HatchyverseAPI.Client.RequestOptions localVarRequestOptions = new HatchyverseAPI.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = HatchyverseAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = HatchyverseAPI.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+
+            // make the HTTP request
+
+            var task = this.AsynchronousClient.GetAsync<List<HatchyBalance>>("/gen2/balance", localVarRequestOptions, this.Configuration, cancellationToken);
+
+#if UNITY_EDITOR || !UNITY_WEBGL
+            var localVarResponse = await task.ConfigureAwait(false);
+#else
+            var localVarResponse = await task;
+#endif
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetGen2Balance", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
         }
 
         /// <summary>

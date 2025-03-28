@@ -41,14 +41,9 @@ namespace HatchyverseAPI.Model
         /// <param name="weight">weight (required).</param>
         /// <param name="lootbox">lootbox (required).</param>
         /// <param name="item">item (required).</param>
-        public MastersLootboxItem(double weight = default(double), MastersLootbox lootbox = default(MastersLootbox), MastersItem item = default(MastersItem))
+        public MastersLootboxItem(double weight = default(double), double lootbox = default(double), MastersItem item = default(MastersItem))
         {
             this.Weight = weight;
-            // to ensure "lootbox" is required (not null)
-            if (lootbox == null)
-            {
-                throw new ArgumentNullException("lootbox is a required property for MastersLootboxItem and cannot be null");
-            }
             this.Lootbox = lootbox;
             // to ensure "item" is required (not null)
             if (item == null)
@@ -68,7 +63,7 @@ namespace HatchyverseAPI.Model
         /// Gets or Sets Lootbox
         /// </summary>
         [DataMember(Name = "lootbox", IsRequired = true, EmitDefaultValue = true)]
-        public MastersLootbox Lootbox { get; set; }
+        public double Lootbox { get; set; }
 
         /// <summary>
         /// Gets or Sets Item

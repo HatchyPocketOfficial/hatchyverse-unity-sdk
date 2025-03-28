@@ -68,8 +68,9 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="chainId"> (optional)</param>
         /// <param name="includeSubnet"> (optional)</param>
+        /// <param name="includeVouchers"> (optional)</param>
         /// <returns>List&lt;MastersItemBalance&gt;</returns>
-        List<MastersItemBalance> GetAccountMastersItemsBalance(double? chainId = default(double?), bool? includeSubnet = default(bool?));
+        List<MastersItemBalance> GetAccountMastersItemsBalance(double? chainId = default(double?), bool? includeSubnet = default(bool?), bool? includeVouchers = default(bool?));
 
         /// <summary>
         /// 
@@ -80,8 +81,9 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="chainId"> (optional)</param>
         /// <param name="includeSubnet"> (optional)</param>
+        /// <param name="includeVouchers"> (optional)</param>
         /// <returns>ApiResponse of List&lt;MastersItemBalance&gt;</returns>
-        ApiResponse<List<MastersItemBalance>> GetAccountMastersItemsBalanceWithHttpInfo(double? chainId = default(double?), bool? includeSubnet = default(bool?));
+        ApiResponse<List<MastersItemBalance>> GetAccountMastersItemsBalanceWithHttpInfo(double? chainId = default(double?), bool? includeSubnet = default(bool?), bool? includeVouchers = default(bool?));
         /// <summary>
         /// 
         /// </summary>
@@ -580,9 +582,10 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="chainId"> (optional)</param>
         /// <param name="includeSubnet"> (optional)</param>
+        /// <param name="includeVouchers"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;MastersItemBalance&gt;</returns>
-        System.Threading.Tasks.Task<List<MastersItemBalance>> GetAccountMastersItemsBalanceAsync(double? chainId = default(double?), bool? includeSubnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<MastersItemBalance>> GetAccountMastersItemsBalanceAsync(double? chainId = default(double?), bool? includeSubnet = default(bool?), bool? includeVouchers = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -593,9 +596,10 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="chainId"> (optional)</param>
         /// <param name="includeSubnet"> (optional)</param>
+        /// <param name="includeVouchers"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;MastersItemBalance&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<MastersItemBalance>>> GetAccountMastersItemsBalanceWithHttpInfoAsync(double? chainId = default(double?), bool? includeSubnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<MastersItemBalance>>> GetAccountMastersItemsBalanceWithHttpInfoAsync(double? chainId = default(double?), bool? includeSubnet = default(bool?), bool? includeVouchers = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -1542,10 +1546,11 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="chainId"> (optional)</param>
         /// <param name="includeSubnet"> (optional)</param>
+        /// <param name="includeVouchers"> (optional)</param>
         /// <returns>List&lt;MastersItemBalance&gt;</returns>
-        public List<MastersItemBalance> GetAccountMastersItemsBalance(double? chainId = default(double?), bool? includeSubnet = default(bool?))
+        public List<MastersItemBalance> GetAccountMastersItemsBalance(double? chainId = default(double?), bool? includeSubnet = default(bool?), bool? includeVouchers = default(bool?))
         {
-            HatchyverseAPI.Client.ApiResponse<List<MastersItemBalance>> localVarResponse = GetAccountMastersItemsBalanceWithHttpInfo(chainId, includeSubnet);
+            HatchyverseAPI.Client.ApiResponse<List<MastersItemBalance>> localVarResponse = GetAccountMastersItemsBalanceWithHttpInfo(chainId, includeSubnet, includeVouchers);
             return localVarResponse.Data;
         }
 
@@ -1555,8 +1560,9 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="chainId"> (optional)</param>
         /// <param name="includeSubnet"> (optional)</param>
+        /// <param name="includeVouchers"> (optional)</param>
         /// <returns>ApiResponse of List&lt;MastersItemBalance&gt;</returns>
-        public HatchyverseAPI.Client.ApiResponse<List<MastersItemBalance>> GetAccountMastersItemsBalanceWithHttpInfo(double? chainId = default(double?), bool? includeSubnet = default(bool?))
+        public HatchyverseAPI.Client.ApiResponse<List<MastersItemBalance>> GetAccountMastersItemsBalanceWithHttpInfo(double? chainId = default(double?), bool? includeSubnet = default(bool?), bool? includeVouchers = default(bool?))
         {
             HatchyverseAPI.Client.RequestOptions localVarRequestOptions = new HatchyverseAPI.Client.RequestOptions();
 
@@ -1581,6 +1587,10 @@ namespace HatchyverseAPI.Api
             if (includeSubnet != null)
             {
                 localVarRequestOptions.QueryParameters.Add(HatchyverseAPI.Client.ClientUtils.ParameterToMultiMap("", "includeSubnet", includeSubnet));
+            }
+            if (includeVouchers != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(HatchyverseAPI.Client.ClientUtils.ParameterToMultiMap("", "includeVouchers", includeVouchers));
             }
 
 
@@ -1602,11 +1612,12 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="chainId"> (optional)</param>
         /// <param name="includeSubnet"> (optional)</param>
+        /// <param name="includeVouchers"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;MastersItemBalance&gt;</returns>
-        public async System.Threading.Tasks.Task<List<MastersItemBalance>> GetAccountMastersItemsBalanceAsync(double? chainId = default(double?), bool? includeSubnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<MastersItemBalance>> GetAccountMastersItemsBalanceAsync(double? chainId = default(double?), bool? includeSubnet = default(bool?), bool? includeVouchers = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            var task = GetAccountMastersItemsBalanceWithHttpInfoAsync(chainId, includeSubnet, cancellationToken);
+            var task = GetAccountMastersItemsBalanceWithHttpInfoAsync(chainId, includeSubnet, includeVouchers, cancellationToken);
 #if UNITY_EDITOR || !UNITY_WEBGL
             HatchyverseAPI.Client.ApiResponse<List<MastersItemBalance>> localVarResponse = await task.ConfigureAwait(false);
 #else
@@ -1621,9 +1632,10 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="chainId"> (optional)</param>
         /// <param name="includeSubnet"> (optional)</param>
+        /// <param name="includeVouchers"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;MastersItemBalance&gt;)</returns>
-        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<List<MastersItemBalance>>> GetAccountMastersItemsBalanceWithHttpInfoAsync(double? chainId = default(double?), bool? includeSubnet = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<List<MastersItemBalance>>> GetAccountMastersItemsBalanceWithHttpInfoAsync(double? chainId = default(double?), bool? includeSubnet = default(bool?), bool? includeVouchers = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             HatchyverseAPI.Client.RequestOptions localVarRequestOptions = new HatchyverseAPI.Client.RequestOptions();
@@ -1650,6 +1662,10 @@ namespace HatchyverseAPI.Api
             if (includeSubnet != null)
             {
                 localVarRequestOptions.QueryParameters.Add(HatchyverseAPI.Client.ClientUtils.ParameterToMultiMap("", "includeSubnet", includeSubnet));
+            }
+            if (includeVouchers != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(HatchyverseAPI.Client.ClientUtils.ParameterToMultiMap("", "includeVouchers", includeVouchers));
             }
 
 

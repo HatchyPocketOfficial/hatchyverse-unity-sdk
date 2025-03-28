@@ -100,7 +100,7 @@ namespace HatchyverseAPI.Model
         /// <param name="category">category (required).</param>
         /// <param name="contract">contract (required).</param>
         /// <param name="contractType">contractType (required).</param>
-        /// <param name="holder">holder (required).</param>
+        /// <param name="holder">holder.</param>
         /// <param name="name">name (required).</param>
         /// <param name="type">type (required).</param>
         /// <param name="userId">userId (required).</param>
@@ -137,12 +137,6 @@ namespace HatchyverseAPI.Model
             }
             this.Contract = contract;
             this.ContractType = contractType;
-            // to ensure "holder" is required (not null)
-            if (holder == null)
-            {
-                throw new ArgumentNullException("holder is a required property for Voucher and cannot be null");
-            }
-            this.Holder = holder;
             // to ensure "name" is required (not null)
             if (name == null)
             {
@@ -168,6 +162,7 @@ namespace HatchyverseAPI.Model
                 throw new ArgumentNullException("updatedAt is a required property for Voucher and cannot be null");
             }
             this.UpdatedAt = updatedAt;
+            this.Holder = holder;
             this.Image = image;
             this.Receiver = receiver;
             this.TokenId = tokenId;
@@ -206,7 +201,7 @@ namespace HatchyverseAPI.Model
         /// <summary>
         /// Gets or Sets Holder
         /// </summary>
-        [DataMember(Name = "holder", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "holder", EmitDefaultValue = true)]
         public string Holder { get; set; }
 
         /// <summary>

@@ -25,43 +25,35 @@ using OpenAPIDateConverter = HatchyverseAPI.Client.OpenAPIDateConverter;
 namespace HatchyverseAPI.Model
 {
     /// <summary>
-    /// GetRankLeaderboard200ResponseInner
+    /// DeleteBatchVouchersRequest
     /// </summary>
-    [DataContract(Name = "GetRankLeaderboard_200_response_inner")]
-    public partial class GetRankLeaderboard200ResponseInner
+    [DataContract(Name = "DeleteBatchVouchers_request")]
+    public partial class DeleteBatchVouchersRequest
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetRankLeaderboard200ResponseInner" /> class.
+        /// Initializes a new instance of the <see cref="DeleteBatchVouchersRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected GetRankLeaderboard200ResponseInner() { }
+        protected DeleteBatchVouchersRequest() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="GetRankLeaderboard200ResponseInner" /> class.
+        /// Initializes a new instance of the <see cref="DeleteBatchVouchersRequest" /> class.
         /// </summary>
-        /// <param name="rank">rank (required).</param>
-        /// <param name="userId">userId (required).</param>
-        public GetRankLeaderboard200ResponseInner(double rank = default(double), string userId = default(string))
+        /// <param name="voucherIds">voucherIds (required).</param>
+        public DeleteBatchVouchersRequest(List<string> voucherIds = default(List<string>))
         {
-            this.Rank = rank;
-            // to ensure "userId" is required (not null)
-            if (userId == null)
+            // to ensure "voucherIds" is required (not null)
+            if (voucherIds == null)
             {
-                throw new ArgumentNullException("userId is a required property for GetRankLeaderboard200ResponseInner and cannot be null");
+                throw new ArgumentNullException("voucherIds is a required property for DeleteBatchVouchersRequest and cannot be null");
             }
-            this.UserId = userId;
+            this.VoucherIds = voucherIds;
         }
 
         /// <summary>
-        /// Gets or Sets Rank
+        /// Gets or Sets VoucherIds
         /// </summary>
-        [DataMember(Name = "rank", IsRequired = true, EmitDefaultValue = true)]
-        public double Rank { get; set; }
-
-        /// <summary>
-        /// Gets or Sets UserId
-        /// </summary>
-        [DataMember(Name = "userId", IsRequired = true, EmitDefaultValue = true)]
-        public string UserId { get; set; }
+        [DataMember(Name = "voucherIds", IsRequired = true, EmitDefaultValue = true)]
+        public List<string> VoucherIds { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,9 +62,8 @@ namespace HatchyverseAPI.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class GetRankLeaderboard200ResponseInner {\n");
-            sb.Append("  Rank: ").Append(Rank).Append("\n");
-            sb.Append("  UserId: ").Append(UserId).Append("\n");
+            sb.Append("class DeleteBatchVouchersRequest {\n");
+            sb.Append("  VoucherIds: ").Append(VoucherIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

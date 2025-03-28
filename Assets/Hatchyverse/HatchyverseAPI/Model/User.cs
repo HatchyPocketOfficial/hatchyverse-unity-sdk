@@ -45,6 +45,7 @@ namespace HatchyverseAPI.Model
         /// <param name="referrerId">referrerId.</param>
         /// <param name="displayName">displayName.</param>
         /// <param name="picture">picture.</param>
+        /// <param name="photoUrl">photoUrl.</param>
         /// <param name="disabled">disabled.</param>
         /// <param name="roles">roles.</param>
         /// <param name="bio">bio.</param>
@@ -55,7 +56,7 @@ namespace HatchyverseAPI.Model
         /// <param name="discordId">discordId.</param>
         /// <param name="discordUsername">discordUsername.</param>
         /// <param name="wallets">wallets.</param>
-        public User(string uid = default(string), string email = default(string), string referralCode = default(string), double referralCount = default(double), string referrerId = default(string), string displayName = default(string), string picture = default(string), bool disabled = default(bool), List<string> roles = default(List<string>), string bio = default(string), double xpPoints = default(double), string mainWallet = default(string), bool vouchersMerged = default(bool), bool discordConfirmed = default(bool), string discordId = default(string), string discordUsername = default(string), List<UserWalletsInner> wallets = default(List<UserWalletsInner>))
+        public User(string uid = default(string), string email = default(string), string referralCode = default(string), double referralCount = default(double), string referrerId = default(string), string displayName = default(string), string picture = default(string), string photoUrl = default(string), bool disabled = default(bool), List<string> roles = default(List<string>), string bio = default(string), double xpPoints = default(double), string mainWallet = default(string), bool vouchersMerged = default(bool), bool discordConfirmed = default(bool), string discordId = default(string), string discordUsername = default(string), List<UserWalletsInner> wallets = default(List<UserWalletsInner>))
         {
             // to ensure "uid" is required (not null)
             if (uid == null)
@@ -79,6 +80,7 @@ namespace HatchyverseAPI.Model
             this.ReferrerId = referrerId;
             this.DisplayName = displayName;
             this.Picture = picture;
+            this.PhotoUrl = photoUrl;
             this.Disabled = disabled;
             this.Roles = roles;
             this.Bio = bio;
@@ -132,6 +134,12 @@ namespace HatchyverseAPI.Model
         /// </summary>
         [DataMember(Name = "picture", EmitDefaultValue = false)]
         public string Picture { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PhotoUrl
+        /// </summary>
+        [DataMember(Name = "photoUrl", EmitDefaultValue = false)]
+        public string PhotoUrl { get; set; }
 
         /// <summary>
         /// Gets or Sets Disabled
@@ -208,6 +216,7 @@ namespace HatchyverseAPI.Model
             sb.Append("  ReferrerId: ").Append(ReferrerId).Append("\n");
             sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
             sb.Append("  Picture: ").Append(Picture).Append("\n");
+            sb.Append("  PhotoUrl: ").Append(PhotoUrl).Append("\n");
             sb.Append("  Disabled: ").Append(Disabled).Append("\n");
             sb.Append("  Roles: ").Append(Roles).Append("\n");
             sb.Append("  Bio: ").Append(Bio).Append("\n");

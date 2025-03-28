@@ -25,56 +25,56 @@ using OpenAPIDateConverter = HatchyverseAPI.Client.OpenAPIDateConverter;
 namespace HatchyverseAPI.Model
 {
     /// <summary>
-    /// Rank
+    /// ScoreItem
     /// </summary>
-    [DataContract(Name = "Rank")]
-    public partial class Rank
+    [DataContract(Name = "ScoreItem")]
+    public partial class ScoreItem
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Rank" /> class.
+        /// Initializes a new instance of the <see cref="ScoreItem" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected Rank() { }
+        protected ScoreItem() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="Rank" /> class.
+        /// Initializes a new instance of the <see cref="ScoreItem" /> class.
         /// </summary>
         /// <param name="gameId">gameId (required).</param>
+        /// <param name="score">score (required).</param>
         /// <param name="userId">userId (required).</param>
-        /// <param name="varRank">varRank (required).</param>
         /// <param name="username">username (required).</param>
         /// <param name="createdAt">createdAt (required).</param>
         /// <param name="updatedAt">updatedAt (required).</param>
-        public Rank(string gameId = default(string), string userId = default(string), double varRank = default(double), string username = default(string), string createdAt = default(string), string updatedAt = default(string))
+        public ScoreItem(string gameId = default(string), double score = default(double), string userId = default(string), string username = default(string), string createdAt = default(string), string updatedAt = default(string))
         {
             // to ensure "gameId" is required (not null)
             if (gameId == null)
             {
-                throw new ArgumentNullException("gameId is a required property for Rank and cannot be null");
+                throw new ArgumentNullException("gameId is a required property for ScoreItem and cannot be null");
             }
             this.GameId = gameId;
+            this.Score = score;
             // to ensure "userId" is required (not null)
             if (userId == null)
             {
-                throw new ArgumentNullException("userId is a required property for Rank and cannot be null");
+                throw new ArgumentNullException("userId is a required property for ScoreItem and cannot be null");
             }
             this.UserId = userId;
-            this.VarRank = varRank;
             // to ensure "username" is required (not null)
             if (username == null)
             {
-                throw new ArgumentNullException("username is a required property for Rank and cannot be null");
+                throw new ArgumentNullException("username is a required property for ScoreItem and cannot be null");
             }
             this.Username = username;
             // to ensure "createdAt" is required (not null)
             if (createdAt == null)
             {
-                throw new ArgumentNullException("createdAt is a required property for Rank and cannot be null");
+                throw new ArgumentNullException("createdAt is a required property for ScoreItem and cannot be null");
             }
             this.CreatedAt = createdAt;
             // to ensure "updatedAt" is required (not null)
             if (updatedAt == null)
             {
-                throw new ArgumentNullException("updatedAt is a required property for Rank and cannot be null");
+                throw new ArgumentNullException("updatedAt is a required property for ScoreItem and cannot be null");
             }
             this.UpdatedAt = updatedAt;
         }
@@ -86,16 +86,16 @@ namespace HatchyverseAPI.Model
         public string GameId { get; set; }
 
         /// <summary>
+        /// Gets or Sets Score
+        /// </summary>
+        [DataMember(Name = "score", IsRequired = true, EmitDefaultValue = true)]
+        public double Score { get; set; }
+
+        /// <summary>
         /// Gets or Sets UserId
         /// </summary>
         [DataMember(Name = "userId", IsRequired = true, EmitDefaultValue = true)]
         public string UserId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets VarRank
-        /// </summary>
-        [DataMember(Name = "rank", IsRequired = true, EmitDefaultValue = true)]
-        public double VarRank { get; set; }
 
         /// <summary>
         /// Gets or Sets Username
@@ -122,10 +122,10 @@ namespace HatchyverseAPI.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class Rank {\n");
+            sb.Append("class ScoreItem {\n");
             sb.Append("  GameId: ").Append(GameId).Append("\n");
+            sb.Append("  Score: ").Append(Score).Append("\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
-            sb.Append("  VarRank: ").Append(VarRank).Append("\n");
             sb.Append("  Username: ").Append(Username).Append("\n");
             sb.Append("  CreatedAt: ").Append(CreatedAt).Append("\n");
             sb.Append("  UpdatedAt: ").Append(UpdatedAt).Append("\n");

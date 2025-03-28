@@ -66,8 +66,9 @@ namespace HatchyverseAPI.Api
         /// 
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="gameId"> (optional)</param>
         /// <returns>List&lt;GameSave&gt;</returns>
-        List<GameSave> GetAllGameSaves();
+        List<GameSave> GetAllGameSaves(string gameId = default(string));
 
         /// <summary>
         /// 
@@ -76,8 +77,9 @@ namespace HatchyverseAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="gameId"> (optional)</param>
         /// <returns>ApiResponse of List&lt;GameSave&gt;</returns>
-        ApiResponse<List<GameSave>> GetAllGameSavesWithHttpInfo();
+        ApiResponse<List<GameSave>> GetAllGameSavesWithHttpInfo(string gameId = default(string));
         /// <summary>
         /// 
         /// </summary>
@@ -212,9 +214,10 @@ namespace HatchyverseAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="gameId"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;GameSave&gt;</returns>
-        System.Threading.Tasks.Task<List<GameSave>> GetAllGameSavesAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<GameSave>> GetAllGameSavesAsync(string gameId = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -223,9 +226,10 @@ namespace HatchyverseAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="gameId"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;GameSave&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<GameSave>>> GetAllGameSavesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<GameSave>>> GetAllGameSavesWithHttpInfoAsync(string gameId = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -716,10 +720,11 @@ namespace HatchyverseAPI.Api
         ///  
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="gameId"> (optional)</param>
         /// <returns>List&lt;GameSave&gt;</returns>
-        public List<GameSave> GetAllGameSaves()
+        public List<GameSave> GetAllGameSaves(string gameId = default(string))
         {
-            HatchyverseAPI.Client.ApiResponse<List<GameSave>> localVarResponse = GetAllGameSavesWithHttpInfo();
+            HatchyverseAPI.Client.ApiResponse<List<GameSave>> localVarResponse = GetAllGameSavesWithHttpInfo(gameId);
             return localVarResponse.Data;
         }
 
@@ -727,8 +732,9 @@ namespace HatchyverseAPI.Api
         ///  
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="gameId"> (optional)</param>
         /// <returns>ApiResponse of List&lt;GameSave&gt;</returns>
-        public HatchyverseAPI.Client.ApiResponse<List<GameSave>> GetAllGameSavesWithHttpInfo()
+        public HatchyverseAPI.Client.ApiResponse<List<GameSave>> GetAllGameSavesWithHttpInfo(string gameId = default(string))
         {
             HatchyverseAPI.Client.RequestOptions localVarRequestOptions = new HatchyverseAPI.Client.RequestOptions();
 
@@ -746,6 +752,10 @@ namespace HatchyverseAPI.Api
             var localVarAccept = HatchyverseAPI.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
+            if (gameId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(HatchyverseAPI.Client.ClientUtils.ParameterToMultiMap("", "gameId", gameId));
+            }
 
 
             // make the HTTP request
@@ -764,11 +774,12 @@ namespace HatchyverseAPI.Api
         ///  
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="gameId"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;GameSave&gt;</returns>
-        public async System.Threading.Tasks.Task<List<GameSave>> GetAllGameSavesAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<GameSave>> GetAllGameSavesAsync(string gameId = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            var task = GetAllGameSavesWithHttpInfoAsync(cancellationToken);
+            var task = GetAllGameSavesWithHttpInfoAsync(gameId, cancellationToken);
 #if UNITY_EDITOR || !UNITY_WEBGL
             HatchyverseAPI.Client.ApiResponse<List<GameSave>> localVarResponse = await task.ConfigureAwait(false);
 #else
@@ -781,9 +792,10 @@ namespace HatchyverseAPI.Api
         ///  
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="gameId"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;GameSave&gt;)</returns>
-        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<List<GameSave>>> GetAllGameSavesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<List<GameSave>>> GetAllGameSavesWithHttpInfoAsync(string gameId = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
 
             HatchyverseAPI.Client.RequestOptions localVarRequestOptions = new HatchyverseAPI.Client.RequestOptions();
@@ -803,6 +815,10 @@ namespace HatchyverseAPI.Api
             var localVarAccept = HatchyverseAPI.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
+            if (gameId != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(HatchyverseAPI.Client.ClientUtils.ParameterToMultiMap("", "gameId", gameId));
+            }
 
 
             // make the HTTP request

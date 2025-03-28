@@ -31,8 +31,8 @@ namespace HatchyverseAPI.Api
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addScoreRequest"></param>
-        /// <returns>Score</returns>
-        Score AddScore(AddScoreRequest addScoreRequest);
+        /// <returns>ScoreItem</returns>
+        ScoreItem AddScore(AddScoreRequest addScoreRequest);
 
         /// <summary>
         /// 
@@ -42,16 +42,16 @@ namespace HatchyverseAPI.Api
         /// </remarks>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addScoreRequest"></param>
-        /// <returns>ApiResponse of Score</returns>
-        ApiResponse<Score> AddScoreWithHttpInfo(AddScoreRequest addScoreRequest);
+        /// <returns>ApiResponse of ScoreItem</returns>
+        ApiResponse<ScoreItem> AddScoreWithHttpInfo(AddScoreRequest addScoreRequest);
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId"></param>
         /// <param name="limit"> (optional)</param>
-        /// <returns>List&lt;GetRankLeaderboard200ResponseInner&gt;</returns>
-        List<GetRankLeaderboard200ResponseInner> GetRankLeaderboard(string appId, double? limit = default(double?));
+        /// <returns>List&lt;RankItem&gt;</returns>
+        List<RankItem> GetRankLeaderboard(string appId, double? limit = default(double?));
 
         /// <summary>
         /// 
@@ -62,16 +62,16 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId"></param>
         /// <param name="limit"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;GetRankLeaderboard200ResponseInner&gt;</returns>
-        ApiResponse<List<GetRankLeaderboard200ResponseInner>> GetRankLeaderboardWithHttpInfo(string appId, double? limit = default(double?));
+        /// <returns>ApiResponse of List&lt;RankItem&gt;</returns>
+        ApiResponse<List<RankItem>> GetRankLeaderboardWithHttpInfo(string appId, double? limit = default(double?));
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gameId"></param>
         /// <param name="limit"> (optional)</param>
-        /// <returns>List&lt;Score&gt;</returns>
-        List<Score> GetScoreLeaderboard(string gameId, double? limit = default(double?));
+        /// <returns>List&lt;ScoreItem&gt;</returns>
+        List<ScoreItem> GetScoreLeaderboard(string gameId, double? limit = default(double?));
 
         /// <summary>
         /// 
@@ -82,15 +82,15 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gameId"></param>
         /// <param name="limit"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;Score&gt;</returns>
-        ApiResponse<List<Score>> GetScoreLeaderboardWithHttpInfo(string gameId, double? limit = default(double?));
+        /// <returns>ApiResponse of List&lt;ScoreItem&gt;</returns>
+        ApiResponse<List<ScoreItem>> GetScoreLeaderboardWithHttpInfo(string gameId, double? limit = default(double?));
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gameId"></param>
-        /// <returns>Rank</returns>
-        Rank GetUserRank(string gameId);
+        /// <returns>RankItem</returns>
+        RankItem GetUserRank(string gameId);
 
         /// <summary>
         /// 
@@ -100,15 +100,15 @@ namespace HatchyverseAPI.Api
         /// </remarks>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gameId"></param>
-        /// <returns>ApiResponse of Rank</returns>
-        ApiResponse<Rank> GetUserRankWithHttpInfo(string gameId);
+        /// <returns>ApiResponse of RankItem</returns>
+        ApiResponse<RankItem> GetUserRankWithHttpInfo(string gameId);
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gameId"></param>
-        /// <returns>Score</returns>
-        Score GetUserScore(string gameId);
+        /// <returns>ScoreItem</returns>
+        ScoreItem GetUserScore(string gameId);
 
         /// <summary>
         /// 
@@ -118,15 +118,15 @@ namespace HatchyverseAPI.Api
         /// </remarks>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gameId"></param>
-        /// <returns>ApiResponse of Score</returns>
-        ApiResponse<Score> GetUserScoreWithHttpInfo(string gameId);
+        /// <returns>ApiResponse of ScoreItem</returns>
+        ApiResponse<ScoreItem> GetUserScoreWithHttpInfo(string gameId);
         /// <summary>
         /// 
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateRankRequest"></param>
-        /// <returns>Rank</returns>
-        Rank UpdateRank(UpdateRankRequest updateRankRequest);
+        /// <returns>RankItem</returns>
+        RankItem UpdateRank(UpdateRankRequest updateRankRequest);
 
         /// <summary>
         /// 
@@ -136,8 +136,8 @@ namespace HatchyverseAPI.Api
         /// </remarks>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateRankRequest"></param>
-        /// <returns>ApiResponse of Rank</returns>
-        ApiResponse<Rank> UpdateRankWithHttpInfo(UpdateRankRequest updateRankRequest);
+        /// <returns>ApiResponse of RankItem</returns>
+        ApiResponse<RankItem> UpdateRankWithHttpInfo(UpdateRankRequest updateRankRequest);
         #endregion Synchronous Operations
     }
 
@@ -156,8 +156,8 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addScoreRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Score</returns>
-        System.Threading.Tasks.Task<Score> AddScoreAsync(AddScoreRequest addScoreRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ScoreItem</returns>
+        System.Threading.Tasks.Task<ScoreItem> AddScoreAsync(AddScoreRequest addScoreRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -168,8 +168,8 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addScoreRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Score)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Score>> AddScoreWithHttpInfoAsync(AddScoreRequest addScoreRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ScoreItem)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ScoreItem>> AddScoreWithHttpInfoAsync(AddScoreRequest addScoreRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -180,8 +180,8 @@ namespace HatchyverseAPI.Api
         /// <param name="appId"></param>
         /// <param name="limit"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;GetRankLeaderboard200ResponseInner&gt;</returns>
-        System.Threading.Tasks.Task<List<GetRankLeaderboard200ResponseInner>> GetRankLeaderboardAsync(string appId, double? limit = default(double?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;RankItem&gt;</returns>
+        System.Threading.Tasks.Task<List<RankItem>> GetRankLeaderboardAsync(string appId, double? limit = default(double?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -193,8 +193,8 @@ namespace HatchyverseAPI.Api
         /// <param name="appId"></param>
         /// <param name="limit"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;GetRankLeaderboard200ResponseInner&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<GetRankLeaderboard200ResponseInner>>> GetRankLeaderboardWithHttpInfoAsync(string appId, double? limit = default(double?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;RankItem&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<RankItem>>> GetRankLeaderboardWithHttpInfoAsync(string appId, double? limit = default(double?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -205,8 +205,8 @@ namespace HatchyverseAPI.Api
         /// <param name="gameId"></param>
         /// <param name="limit"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Score&gt;</returns>
-        System.Threading.Tasks.Task<List<Score>> GetScoreLeaderboardAsync(string gameId, double? limit = default(double?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;ScoreItem&gt;</returns>
+        System.Threading.Tasks.Task<List<ScoreItem>> GetScoreLeaderboardAsync(string gameId, double? limit = default(double?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -218,8 +218,8 @@ namespace HatchyverseAPI.Api
         /// <param name="gameId"></param>
         /// <param name="limit"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Score&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Score>>> GetScoreLeaderboardWithHttpInfoAsync(string gameId, double? limit = default(double?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;ScoreItem&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ScoreItem>>> GetScoreLeaderboardWithHttpInfoAsync(string gameId, double? limit = default(double?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -229,8 +229,8 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gameId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Rank</returns>
-        System.Threading.Tasks.Task<Rank> GetUserRankAsync(string gameId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of RankItem</returns>
+        System.Threading.Tasks.Task<RankItem> GetUserRankAsync(string gameId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -241,8 +241,8 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gameId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Rank)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Rank>> GetUserRankWithHttpInfoAsync(string gameId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (RankItem)</returns>
+        System.Threading.Tasks.Task<ApiResponse<RankItem>> GetUserRankWithHttpInfoAsync(string gameId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -252,8 +252,8 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gameId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Score</returns>
-        System.Threading.Tasks.Task<Score> GetUserScoreAsync(string gameId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ScoreItem</returns>
+        System.Threading.Tasks.Task<ScoreItem> GetUserScoreAsync(string gameId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -264,8 +264,8 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gameId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Score)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Score>> GetUserScoreWithHttpInfoAsync(string gameId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ScoreItem)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ScoreItem>> GetUserScoreWithHttpInfoAsync(string gameId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -275,8 +275,8 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateRankRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Rank</returns>
-        System.Threading.Tasks.Task<Rank> UpdateRankAsync(UpdateRankRequest updateRankRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of RankItem</returns>
+        System.Threading.Tasks.Task<RankItem> UpdateRankAsync(UpdateRankRequest updateRankRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -287,8 +287,8 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateRankRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Rank)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Rank>> UpdateRankWithHttpInfoAsync(UpdateRankRequest updateRankRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (RankItem)</returns>
+        System.Threading.Tasks.Task<ApiResponse<RankItem>> UpdateRankWithHttpInfoAsync(UpdateRankRequest updateRankRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -438,10 +438,10 @@ namespace HatchyverseAPI.Api
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addScoreRequest"></param>
-        /// <returns>Score</returns>
-        public Score AddScore(AddScoreRequest addScoreRequest)
+        /// <returns>ScoreItem</returns>
+        public ScoreItem AddScore(AddScoreRequest addScoreRequest)
         {
-            HatchyverseAPI.Client.ApiResponse<Score> localVarResponse = AddScoreWithHttpInfo(addScoreRequest);
+            HatchyverseAPI.Client.ApiResponse<ScoreItem> localVarResponse = AddScoreWithHttpInfo(addScoreRequest);
             return localVarResponse.Data;
         }
 
@@ -450,8 +450,8 @@ namespace HatchyverseAPI.Api
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addScoreRequest"></param>
-        /// <returns>ApiResponse of Score</returns>
-        public HatchyverseAPI.Client.ApiResponse<Score> AddScoreWithHttpInfo(AddScoreRequest addScoreRequest)
+        /// <returns>ApiResponse of ScoreItem</returns>
+        public HatchyverseAPI.Client.ApiResponse<ScoreItem> AddScoreWithHttpInfo(AddScoreRequest addScoreRequest)
         {
             // verify the required parameter 'addScoreRequest' is set
             if (addScoreRequest == null)
@@ -478,7 +478,7 @@ namespace HatchyverseAPI.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Score>("/leaderboard/scores", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<ScoreItem>("/leaderboard/scores", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -495,14 +495,14 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addScoreRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Score</returns>
-        public async System.Threading.Tasks.Task<Score> AddScoreAsync(AddScoreRequest addScoreRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ScoreItem</returns>
+        public async System.Threading.Tasks.Task<ScoreItem> AddScoreAsync(AddScoreRequest addScoreRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             var task = AddScoreWithHttpInfoAsync(addScoreRequest, cancellationToken);
 #if UNITY_EDITOR || !UNITY_WEBGL
-            HatchyverseAPI.Client.ApiResponse<Score> localVarResponse = await task.ConfigureAwait(false);
+            HatchyverseAPI.Client.ApiResponse<ScoreItem> localVarResponse = await task.ConfigureAwait(false);
 #else
-            HatchyverseAPI.Client.ApiResponse<Score> localVarResponse = await task;
+            HatchyverseAPI.Client.ApiResponse<ScoreItem> localVarResponse = await task;
 #endif
             return localVarResponse.Data;
         }
@@ -513,8 +513,8 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addScoreRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Score)</returns>
-        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<Score>> AddScoreWithHttpInfoAsync(AddScoreRequest addScoreRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ScoreItem)</returns>
+        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<ScoreItem>> AddScoreWithHttpInfoAsync(AddScoreRequest addScoreRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'addScoreRequest' is set
             if (addScoreRequest == null)
@@ -544,7 +544,7 @@ namespace HatchyverseAPI.Api
 
             // make the HTTP request
 
-            var task = this.AsynchronousClient.PostAsync<Score>("/leaderboard/scores", localVarRequestOptions, this.Configuration, cancellationToken);
+            var task = this.AsynchronousClient.PostAsync<ScoreItem>("/leaderboard/scores", localVarRequestOptions, this.Configuration, cancellationToken);
 
 #if UNITY_EDITOR || !UNITY_WEBGL
             var localVarResponse = await task.ConfigureAwait(false);
@@ -567,10 +567,10 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId"></param>
         /// <param name="limit"> (optional)</param>
-        /// <returns>List&lt;GetRankLeaderboard200ResponseInner&gt;</returns>
-        public List<GetRankLeaderboard200ResponseInner> GetRankLeaderboard(string appId, double? limit = default(double?))
+        /// <returns>List&lt;RankItem&gt;</returns>
+        public List<RankItem> GetRankLeaderboard(string appId, double? limit = default(double?))
         {
-            HatchyverseAPI.Client.ApiResponse<List<GetRankLeaderboard200ResponseInner>> localVarResponse = GetRankLeaderboardWithHttpInfo(appId, limit);
+            HatchyverseAPI.Client.ApiResponse<List<RankItem>> localVarResponse = GetRankLeaderboardWithHttpInfo(appId, limit);
             return localVarResponse.Data;
         }
 
@@ -580,8 +580,8 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="appId"></param>
         /// <param name="limit"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;GetRankLeaderboard200ResponseInner&gt;</returns>
-        public HatchyverseAPI.Client.ApiResponse<List<GetRankLeaderboard200ResponseInner>> GetRankLeaderboardWithHttpInfo(string appId, double? limit = default(double?))
+        /// <returns>ApiResponse of List&lt;RankItem&gt;</returns>
+        public HatchyverseAPI.Client.ApiResponse<List<RankItem>> GetRankLeaderboardWithHttpInfo(string appId, double? limit = default(double?))
         {
             // verify the required parameter 'appId' is set
             if (appId == null)
@@ -611,7 +611,7 @@ namespace HatchyverseAPI.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<GetRankLeaderboard200ResponseInner>>("/leaderboard/rank/{appId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<RankItem>>("/leaderboard/rank/{appId}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -629,14 +629,14 @@ namespace HatchyverseAPI.Api
         /// <param name="appId"></param>
         /// <param name="limit"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;GetRankLeaderboard200ResponseInner&gt;</returns>
-        public async System.Threading.Tasks.Task<List<GetRankLeaderboard200ResponseInner>> GetRankLeaderboardAsync(string appId, double? limit = default(double?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;RankItem&gt;</returns>
+        public async System.Threading.Tasks.Task<List<RankItem>> GetRankLeaderboardAsync(string appId, double? limit = default(double?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             var task = GetRankLeaderboardWithHttpInfoAsync(appId, limit, cancellationToken);
 #if UNITY_EDITOR || !UNITY_WEBGL
-            HatchyverseAPI.Client.ApiResponse<List<GetRankLeaderboard200ResponseInner>> localVarResponse = await task.ConfigureAwait(false);
+            HatchyverseAPI.Client.ApiResponse<List<RankItem>> localVarResponse = await task.ConfigureAwait(false);
 #else
-            HatchyverseAPI.Client.ApiResponse<List<GetRankLeaderboard200ResponseInner>> localVarResponse = await task;
+            HatchyverseAPI.Client.ApiResponse<List<RankItem>> localVarResponse = await task;
 #endif
             return localVarResponse.Data;
         }
@@ -648,8 +648,8 @@ namespace HatchyverseAPI.Api
         /// <param name="appId"></param>
         /// <param name="limit"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;GetRankLeaderboard200ResponseInner&gt;)</returns>
-        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<List<GetRankLeaderboard200ResponseInner>>> GetRankLeaderboardWithHttpInfoAsync(string appId, double? limit = default(double?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;RankItem&gt;)</returns>
+        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<List<RankItem>>> GetRankLeaderboardWithHttpInfoAsync(string appId, double? limit = default(double?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'appId' is set
             if (appId == null)
@@ -682,7 +682,7 @@ namespace HatchyverseAPI.Api
 
             // make the HTTP request
 
-            var task = this.AsynchronousClient.GetAsync<List<GetRankLeaderboard200ResponseInner>>("/leaderboard/rank/{appId}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var task = this.AsynchronousClient.GetAsync<List<RankItem>>("/leaderboard/rank/{appId}", localVarRequestOptions, this.Configuration, cancellationToken);
 
 #if UNITY_EDITOR || !UNITY_WEBGL
             var localVarResponse = await task.ConfigureAwait(false);
@@ -705,10 +705,10 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gameId"></param>
         /// <param name="limit"> (optional)</param>
-        /// <returns>List&lt;Score&gt;</returns>
-        public List<Score> GetScoreLeaderboard(string gameId, double? limit = default(double?))
+        /// <returns>List&lt;ScoreItem&gt;</returns>
+        public List<ScoreItem> GetScoreLeaderboard(string gameId, double? limit = default(double?))
         {
-            HatchyverseAPI.Client.ApiResponse<List<Score>> localVarResponse = GetScoreLeaderboardWithHttpInfo(gameId, limit);
+            HatchyverseAPI.Client.ApiResponse<List<ScoreItem>> localVarResponse = GetScoreLeaderboardWithHttpInfo(gameId, limit);
             return localVarResponse.Data;
         }
 
@@ -718,8 +718,8 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gameId"></param>
         /// <param name="limit"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;Score&gt;</returns>
-        public HatchyverseAPI.Client.ApiResponse<List<Score>> GetScoreLeaderboardWithHttpInfo(string gameId, double? limit = default(double?))
+        /// <returns>ApiResponse of List&lt;ScoreItem&gt;</returns>
+        public HatchyverseAPI.Client.ApiResponse<List<ScoreItem>> GetScoreLeaderboardWithHttpInfo(string gameId, double? limit = default(double?))
         {
             // verify the required parameter 'gameId' is set
             if (gameId == null)
@@ -749,7 +749,7 @@ namespace HatchyverseAPI.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<Score>>("/leaderboard/scores/{gameId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<ScoreItem>>("/leaderboard/scores/{gameId}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -767,14 +767,14 @@ namespace HatchyverseAPI.Api
         /// <param name="gameId"></param>
         /// <param name="limit"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;Score&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Score>> GetScoreLeaderboardAsync(string gameId, double? limit = default(double?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;ScoreItem&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ScoreItem>> GetScoreLeaderboardAsync(string gameId, double? limit = default(double?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             var task = GetScoreLeaderboardWithHttpInfoAsync(gameId, limit, cancellationToken);
 #if UNITY_EDITOR || !UNITY_WEBGL
-            HatchyverseAPI.Client.ApiResponse<List<Score>> localVarResponse = await task.ConfigureAwait(false);
+            HatchyverseAPI.Client.ApiResponse<List<ScoreItem>> localVarResponse = await task.ConfigureAwait(false);
 #else
-            HatchyverseAPI.Client.ApiResponse<List<Score>> localVarResponse = await task;
+            HatchyverseAPI.Client.ApiResponse<List<ScoreItem>> localVarResponse = await task;
 #endif
             return localVarResponse.Data;
         }
@@ -786,8 +786,8 @@ namespace HatchyverseAPI.Api
         /// <param name="gameId"></param>
         /// <param name="limit"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;Score&gt;)</returns>
-        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<List<Score>>> GetScoreLeaderboardWithHttpInfoAsync(string gameId, double? limit = default(double?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;ScoreItem&gt;)</returns>
+        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<List<ScoreItem>>> GetScoreLeaderboardWithHttpInfoAsync(string gameId, double? limit = default(double?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'gameId' is set
             if (gameId == null)
@@ -820,7 +820,7 @@ namespace HatchyverseAPI.Api
 
             // make the HTTP request
 
-            var task = this.AsynchronousClient.GetAsync<List<Score>>("/leaderboard/scores/{gameId}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var task = this.AsynchronousClient.GetAsync<List<ScoreItem>>("/leaderboard/scores/{gameId}", localVarRequestOptions, this.Configuration, cancellationToken);
 
 #if UNITY_EDITOR || !UNITY_WEBGL
             var localVarResponse = await task.ConfigureAwait(false);
@@ -842,10 +842,10 @@ namespace HatchyverseAPI.Api
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gameId"></param>
-        /// <returns>Rank</returns>
-        public Rank GetUserRank(string gameId)
+        /// <returns>RankItem</returns>
+        public RankItem GetUserRank(string gameId)
         {
-            HatchyverseAPI.Client.ApiResponse<Rank> localVarResponse = GetUserRankWithHttpInfo(gameId);
+            HatchyverseAPI.Client.ApiResponse<RankItem> localVarResponse = GetUserRankWithHttpInfo(gameId);
             return localVarResponse.Data;
         }
 
@@ -854,8 +854,8 @@ namespace HatchyverseAPI.Api
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gameId"></param>
-        /// <returns>ApiResponse of Rank</returns>
-        public HatchyverseAPI.Client.ApiResponse<Rank> GetUserRankWithHttpInfo(string gameId)
+        /// <returns>ApiResponse of RankItem</returns>
+        public HatchyverseAPI.Client.ApiResponse<RankItem> GetUserRankWithHttpInfo(string gameId)
         {
             // verify the required parameter 'gameId' is set
             if (gameId == null)
@@ -881,7 +881,7 @@ namespace HatchyverseAPI.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Rank>("/leaderboard/rank/{gameId}/me", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<RankItem>("/leaderboard/rank/{gameId}/me", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -898,14 +898,14 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gameId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Rank</returns>
-        public async System.Threading.Tasks.Task<Rank> GetUserRankAsync(string gameId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of RankItem</returns>
+        public async System.Threading.Tasks.Task<RankItem> GetUserRankAsync(string gameId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             var task = GetUserRankWithHttpInfoAsync(gameId, cancellationToken);
 #if UNITY_EDITOR || !UNITY_WEBGL
-            HatchyverseAPI.Client.ApiResponse<Rank> localVarResponse = await task.ConfigureAwait(false);
+            HatchyverseAPI.Client.ApiResponse<RankItem> localVarResponse = await task.ConfigureAwait(false);
 #else
-            HatchyverseAPI.Client.ApiResponse<Rank> localVarResponse = await task;
+            HatchyverseAPI.Client.ApiResponse<RankItem> localVarResponse = await task;
 #endif
             return localVarResponse.Data;
         }
@@ -916,8 +916,8 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gameId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Rank)</returns>
-        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<Rank>> GetUserRankWithHttpInfoAsync(string gameId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (RankItem)</returns>
+        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<RankItem>> GetUserRankWithHttpInfoAsync(string gameId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'gameId' is set
             if (gameId == null)
@@ -946,7 +946,7 @@ namespace HatchyverseAPI.Api
 
             // make the HTTP request
 
-            var task = this.AsynchronousClient.GetAsync<Rank>("/leaderboard/rank/{gameId}/me", localVarRequestOptions, this.Configuration, cancellationToken);
+            var task = this.AsynchronousClient.GetAsync<RankItem>("/leaderboard/rank/{gameId}/me", localVarRequestOptions, this.Configuration, cancellationToken);
 
 #if UNITY_EDITOR || !UNITY_WEBGL
             var localVarResponse = await task.ConfigureAwait(false);
@@ -968,10 +968,10 @@ namespace HatchyverseAPI.Api
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gameId"></param>
-        /// <returns>Score</returns>
-        public Score GetUserScore(string gameId)
+        /// <returns>ScoreItem</returns>
+        public ScoreItem GetUserScore(string gameId)
         {
-            HatchyverseAPI.Client.ApiResponse<Score> localVarResponse = GetUserScoreWithHttpInfo(gameId);
+            HatchyverseAPI.Client.ApiResponse<ScoreItem> localVarResponse = GetUserScoreWithHttpInfo(gameId);
             return localVarResponse.Data;
         }
 
@@ -980,8 +980,8 @@ namespace HatchyverseAPI.Api
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gameId"></param>
-        /// <returns>ApiResponse of Score</returns>
-        public HatchyverseAPI.Client.ApiResponse<Score> GetUserScoreWithHttpInfo(string gameId)
+        /// <returns>ApiResponse of ScoreItem</returns>
+        public HatchyverseAPI.Client.ApiResponse<ScoreItem> GetUserScoreWithHttpInfo(string gameId)
         {
             // verify the required parameter 'gameId' is set
             if (gameId == null)
@@ -1007,7 +1007,7 @@ namespace HatchyverseAPI.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Score>("/leaderboard/scores/{gameId}/me", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ScoreItem>("/leaderboard/scores/{gameId}/me", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1024,14 +1024,14 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gameId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Score</returns>
-        public async System.Threading.Tasks.Task<Score> GetUserScoreAsync(string gameId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ScoreItem</returns>
+        public async System.Threading.Tasks.Task<ScoreItem> GetUserScoreAsync(string gameId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             var task = GetUserScoreWithHttpInfoAsync(gameId, cancellationToken);
 #if UNITY_EDITOR || !UNITY_WEBGL
-            HatchyverseAPI.Client.ApiResponse<Score> localVarResponse = await task.ConfigureAwait(false);
+            HatchyverseAPI.Client.ApiResponse<ScoreItem> localVarResponse = await task.ConfigureAwait(false);
 #else
-            HatchyverseAPI.Client.ApiResponse<Score> localVarResponse = await task;
+            HatchyverseAPI.Client.ApiResponse<ScoreItem> localVarResponse = await task;
 #endif
             return localVarResponse.Data;
         }
@@ -1042,8 +1042,8 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="gameId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Score)</returns>
-        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<Score>> GetUserScoreWithHttpInfoAsync(string gameId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ScoreItem)</returns>
+        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<ScoreItem>> GetUserScoreWithHttpInfoAsync(string gameId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'gameId' is set
             if (gameId == null)
@@ -1072,7 +1072,7 @@ namespace HatchyverseAPI.Api
 
             // make the HTTP request
 
-            var task = this.AsynchronousClient.GetAsync<Score>("/leaderboard/scores/{gameId}/me", localVarRequestOptions, this.Configuration, cancellationToken);
+            var task = this.AsynchronousClient.GetAsync<ScoreItem>("/leaderboard/scores/{gameId}/me", localVarRequestOptions, this.Configuration, cancellationToken);
 
 #if UNITY_EDITOR || !UNITY_WEBGL
             var localVarResponse = await task.ConfigureAwait(false);
@@ -1094,10 +1094,10 @@ namespace HatchyverseAPI.Api
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateRankRequest"></param>
-        /// <returns>Rank</returns>
-        public Rank UpdateRank(UpdateRankRequest updateRankRequest)
+        /// <returns>RankItem</returns>
+        public RankItem UpdateRank(UpdateRankRequest updateRankRequest)
         {
-            HatchyverseAPI.Client.ApiResponse<Rank> localVarResponse = UpdateRankWithHttpInfo(updateRankRequest);
+            HatchyverseAPI.Client.ApiResponse<RankItem> localVarResponse = UpdateRankWithHttpInfo(updateRankRequest);
             return localVarResponse.Data;
         }
 
@@ -1106,8 +1106,8 @@ namespace HatchyverseAPI.Api
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateRankRequest"></param>
-        /// <returns>ApiResponse of Rank</returns>
-        public HatchyverseAPI.Client.ApiResponse<Rank> UpdateRankWithHttpInfo(UpdateRankRequest updateRankRequest)
+        /// <returns>ApiResponse of RankItem</returns>
+        public HatchyverseAPI.Client.ApiResponse<RankItem> UpdateRankWithHttpInfo(UpdateRankRequest updateRankRequest)
         {
             // verify the required parameter 'updateRankRequest' is set
             if (updateRankRequest == null)
@@ -1134,7 +1134,7 @@ namespace HatchyverseAPI.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Rank>("/leaderboard/rank", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<RankItem>("/leaderboard/rank", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1151,14 +1151,14 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateRankRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Rank</returns>
-        public async System.Threading.Tasks.Task<Rank> UpdateRankAsync(UpdateRankRequest updateRankRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of RankItem</returns>
+        public async System.Threading.Tasks.Task<RankItem> UpdateRankAsync(UpdateRankRequest updateRankRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             var task = UpdateRankWithHttpInfoAsync(updateRankRequest, cancellationToken);
 #if UNITY_EDITOR || !UNITY_WEBGL
-            HatchyverseAPI.Client.ApiResponse<Rank> localVarResponse = await task.ConfigureAwait(false);
+            HatchyverseAPI.Client.ApiResponse<RankItem> localVarResponse = await task.ConfigureAwait(false);
 #else
-            HatchyverseAPI.Client.ApiResponse<Rank> localVarResponse = await task;
+            HatchyverseAPI.Client.ApiResponse<RankItem> localVarResponse = await task;
 #endif
             return localVarResponse.Data;
         }
@@ -1169,8 +1169,8 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateRankRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Rank)</returns>
-        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<Rank>> UpdateRankWithHttpInfoAsync(UpdateRankRequest updateRankRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (RankItem)</returns>
+        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<RankItem>> UpdateRankWithHttpInfoAsync(UpdateRankRequest updateRankRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'updateRankRequest' is set
             if (updateRankRequest == null)
@@ -1200,7 +1200,7 @@ namespace HatchyverseAPI.Api
 
             // make the HTTP request
 
-            var task = this.AsynchronousClient.PostAsync<Rank>("/leaderboard/rank", localVarRequestOptions, this.Configuration, cancellationToken);
+            var task = this.AsynchronousClient.PostAsync<RankItem>("/leaderboard/rank", localVarRequestOptions, this.Configuration, cancellationToken);
 
 #if UNITY_EDITOR || !UNITY_WEBGL
             var localVarResponse = await task.ConfigureAwait(false);

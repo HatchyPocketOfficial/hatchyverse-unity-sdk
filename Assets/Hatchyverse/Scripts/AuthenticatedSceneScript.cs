@@ -30,6 +30,20 @@ public class AuthenticatedSceneScript : MonoBehaviour
         }
     }
 
+    public async void OnGetLeaderboard()
+    {
+        Debug.Log("OnGetLeaderboard");
+        var list = await leaderboardApi.GetRankLeaderboardAsync(
+            HatchyverseConfig.DefaultConfig.appId, 10
+        );
+        var rankList = "";
+        foreach (var rank in list)
+        {
+            rankList += rank.ToString() + "\n";
+        }
+        testInput.text = rankList.ToString();
+    }
+
     public async void OnGetUserInfo()
     {
         Debug.Log("OnGetUserInfo");
@@ -41,7 +55,7 @@ public class AuthenticatedSceneScript : MonoBehaviour
     {
         Debug.Log("OnGetUserInfo");
         Debug.Log(HatchyverseConfig.DefaultConfig.appId);
-        await leaderboardApi.AddScoreAsync(new AddScoreRequest("", "", 10, HatchyverseConfig.DefaultConfig.appId));
+        await leaderboardApi.AddScoreAsync(new AddScoreRequest("apyolt@gmail.com", 10, HatchyverseConfig.DefaultConfig.appId));
     }
 
     public async void PostRank()
@@ -49,6 +63,6 @@ public class AuthenticatedSceneScript : MonoBehaviour
         Debug.Log("OnGetUserInfo");
         Debug.Log(HatchyverseConfig.DefaultConfig.appId);
         var userInfo = await usersApi.GetUserAsync();
-        await leaderboardApi.UpdateRankAsync(new UpdateRankRequest(userInfo.Uid, 10, HatchyverseConfig.DefaultConfig.appId));
+        await leaderboardApi.UpdateRankAsync(new UpdateRankRequest(userInfo.Uid, 302, HatchyverseConfig.DefaultConfig.appId));
     }
 }

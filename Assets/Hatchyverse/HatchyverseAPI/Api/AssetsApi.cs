@@ -78,6 +78,40 @@ namespace HatchyverseAPI.Api
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;Asset&gt;</returns>
         ApiResponse<List<Asset>> GetAssetsWithHttpInfo();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>AssetAgreement</returns>
+        AssetAgreement GetAssetsAgreement();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of AssetAgreement</returns>
+        ApiResponse<AssetAgreement> GetAssetsAgreementWithHttpInfo();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postAssetsAgreementRequest"></param>
+        /// <returns>AssetAgreement</returns>
+        AssetAgreement PostAssetsAgreement(PostAssetsAgreementRequest postAssetsAgreementRequest);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postAssetsAgreementRequest"></param>
+        /// <returns>ApiResponse of AssetAgreement</returns>
+        ApiResponse<AssetAgreement> PostAssetsAgreementWithHttpInfo(PostAssetsAgreementRequest postAssetsAgreementRequest);
         #endregion Synchronous Operations
     }
 
@@ -154,6 +188,50 @@ namespace HatchyverseAPI.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Asset&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Asset>>> GetAssetsWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AssetAgreement</returns>
+        System.Threading.Tasks.Task<AssetAgreement> GetAssetsAgreementAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AssetAgreement)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AssetAgreement>> GetAssetsAgreementWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postAssetsAgreementRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AssetAgreement</returns>
+        System.Threading.Tasks.Task<AssetAgreement> PostAssetsAgreementAsync(PostAssetsAgreementRequest postAssetsAgreementRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postAssetsAgreementRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AssetAgreement)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AssetAgreement>> PostAssetsAgreementWithHttpInfoAsync(PostAssetsAgreementRequest postAssetsAgreementRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -654,6 +732,246 @@ namespace HatchyverseAPI.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetAssets", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>AssetAgreement</returns>
+        public AssetAgreement GetAssetsAgreement()
+        {
+            HatchyverseAPI.Client.ApiResponse<AssetAgreement> localVarResponse = GetAssetsAgreementWithHttpInfo();
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of AssetAgreement</returns>
+        public HatchyverseAPI.Client.ApiResponse<AssetAgreement> GetAssetsAgreementWithHttpInfo()
+        {
+            HatchyverseAPI.Client.RequestOptions localVarRequestOptions = new HatchyverseAPI.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = HatchyverseAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = HatchyverseAPI.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Get<AssetAgreement>("/assets/agreement", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetAssetsAgreement", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AssetAgreement</returns>
+        public async System.Threading.Tasks.Task<AssetAgreement> GetAssetsAgreementAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            var task = GetAssetsAgreementWithHttpInfoAsync(cancellationToken);
+#if UNITY_EDITOR || !UNITY_WEBGL
+            HatchyverseAPI.Client.ApiResponse<AssetAgreement> localVarResponse = await task.ConfigureAwait(false);
+#else
+            HatchyverseAPI.Client.ApiResponse<AssetAgreement> localVarResponse = await task;
+#endif
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AssetAgreement)</returns>
+        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<AssetAgreement>> GetAssetsAgreementWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            HatchyverseAPI.Client.RequestOptions localVarRequestOptions = new HatchyverseAPI.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = HatchyverseAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = HatchyverseAPI.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+
+
+            // make the HTTP request
+
+            var task = this.AsynchronousClient.GetAsync<AssetAgreement>("/assets/agreement", localVarRequestOptions, this.Configuration, cancellationToken);
+
+#if UNITY_EDITOR || !UNITY_WEBGL
+            var localVarResponse = await task.ConfigureAwait(false);
+#else
+            var localVarResponse = await task;
+#endif
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetAssetsAgreement", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postAssetsAgreementRequest"></param>
+        /// <returns>AssetAgreement</returns>
+        public AssetAgreement PostAssetsAgreement(PostAssetsAgreementRequest postAssetsAgreementRequest)
+        {
+            HatchyverseAPI.Client.ApiResponse<AssetAgreement> localVarResponse = PostAssetsAgreementWithHttpInfo(postAssetsAgreementRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postAssetsAgreementRequest"></param>
+        /// <returns>ApiResponse of AssetAgreement</returns>
+        public HatchyverseAPI.Client.ApiResponse<AssetAgreement> PostAssetsAgreementWithHttpInfo(PostAssetsAgreementRequest postAssetsAgreementRequest)
+        {
+            // verify the required parameter 'postAssetsAgreementRequest' is set
+            if (postAssetsAgreementRequest == null)
+                throw new HatchyverseAPI.Client.ApiException(400, "Missing required parameter 'postAssetsAgreementRequest' when calling AssetsApi->PostAssetsAgreement");
+
+            HatchyverseAPI.Client.RequestOptions localVarRequestOptions = new HatchyverseAPI.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = HatchyverseAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = HatchyverseAPI.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = postAssetsAgreementRequest;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<AssetAgreement>("/assets/agreement", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PostAssetsAgreement", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postAssetsAgreementRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of AssetAgreement</returns>
+        public async System.Threading.Tasks.Task<AssetAgreement> PostAssetsAgreementAsync(PostAssetsAgreementRequest postAssetsAgreementRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            var task = PostAssetsAgreementWithHttpInfoAsync(postAssetsAgreementRequest, cancellationToken);
+#if UNITY_EDITOR || !UNITY_WEBGL
+            HatchyverseAPI.Client.ApiResponse<AssetAgreement> localVarResponse = await task.ConfigureAwait(false);
+#else
+            HatchyverseAPI.Client.ApiResponse<AssetAgreement> localVarResponse = await task;
+#endif
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="postAssetsAgreementRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (AssetAgreement)</returns>
+        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<AssetAgreement>> PostAssetsAgreementWithHttpInfoAsync(PostAssetsAgreementRequest postAssetsAgreementRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'postAssetsAgreementRequest' is set
+            if (postAssetsAgreementRequest == null)
+                throw new HatchyverseAPI.Client.ApiException(400, "Missing required parameter 'postAssetsAgreementRequest' when calling AssetsApi->PostAssetsAgreement");
+
+
+            HatchyverseAPI.Client.RequestOptions localVarRequestOptions = new HatchyverseAPI.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = HatchyverseAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = HatchyverseAPI.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = postAssetsAgreementRequest;
+
+
+            // make the HTTP request
+
+            var task = this.AsynchronousClient.PostAsync<AssetAgreement>("/assets/agreement", localVarRequestOptions, this.Configuration, cancellationToken);
+
+#if UNITY_EDITOR || !UNITY_WEBGL
+            var localVarResponse = await task.ConfigureAwait(false);
+#else
+            var localVarResponse = await task;
+#endif
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PostAssetsAgreement", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

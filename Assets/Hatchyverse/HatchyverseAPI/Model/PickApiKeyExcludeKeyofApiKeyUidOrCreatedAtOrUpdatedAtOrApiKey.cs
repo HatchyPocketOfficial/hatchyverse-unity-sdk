@@ -41,11 +41,8 @@ namespace HatchyverseAPI.Model
         /// <param name="name">name (required).</param>
         /// <param name="permissions">permissions (required).</param>
         /// <param name="appId">appId.</param>
-        /// <param name="eggsLimit">eggsLimit.</param>
-        /// <param name="tokenLimit">tokenLimit.</param>
-        /// <param name="commonChestLimit">commonChestLimit.</param>
-        /// <param name="premiumChestLimit">premiumChestLimit.</param>
-        public PickApiKeyExcludeKeyofApiKeyUidOrCreatedAtOrUpdatedAtOrApiKey(string name = default(string), List<string> permissions = default(List<string>), string appId = default(string), double eggsLimit = default(double), double tokenLimit = default(double), double commonChestLimit = default(double), double premiumChestLimit = default(double))
+        /// <param name="balance">balance (required).</param>
+        public PickApiKeyExcludeKeyofApiKeyUidOrCreatedAtOrUpdatedAtOrApiKey(string name = default(string), List<string> permissions = default(List<string>), string appId = default(string), Dictionary<string, double> balance = default(Dictionary<string, double>))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -59,11 +56,13 @@ namespace HatchyverseAPI.Model
                 throw new ArgumentNullException("permissions is a required property for PickApiKeyExcludeKeyofApiKeyUidOrCreatedAtOrUpdatedAtOrApiKey and cannot be null");
             }
             this.Permissions = permissions;
+            // to ensure "balance" is required (not null)
+            if (balance == null)
+            {
+                throw new ArgumentNullException("balance is a required property for PickApiKeyExcludeKeyofApiKeyUidOrCreatedAtOrUpdatedAtOrApiKey and cannot be null");
+            }
+            this.Balance = balance;
             this.AppId = appId;
-            this.EggsLimit = eggsLimit;
-            this.TokenLimit = tokenLimit;
-            this.CommonChestLimit = commonChestLimit;
-            this.PremiumChestLimit = premiumChestLimit;
         }
 
         /// <summary>
@@ -85,28 +84,10 @@ namespace HatchyverseAPI.Model
         public string AppId { get; set; }
 
         /// <summary>
-        /// Gets or Sets EggsLimit
+        /// Gets or Sets Balance
         /// </summary>
-        [DataMember(Name = "eggsLimit", EmitDefaultValue = false)]
-        public double EggsLimit { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TokenLimit
-        /// </summary>
-        [DataMember(Name = "tokenLimit", EmitDefaultValue = false)]
-        public double TokenLimit { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CommonChestLimit
-        /// </summary>
-        [DataMember(Name = "commonChestLimit", EmitDefaultValue = false)]
-        public double CommonChestLimit { get; set; }
-
-        /// <summary>
-        /// Gets or Sets PremiumChestLimit
-        /// </summary>
-        [DataMember(Name = "premiumChestLimit", EmitDefaultValue = false)]
-        public double PremiumChestLimit { get; set; }
+        [DataMember(Name = "balance", IsRequired = true, EmitDefaultValue = true)]
+        public Dictionary<string, double> Balance { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -119,10 +100,7 @@ namespace HatchyverseAPI.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Permissions: ").Append(Permissions).Append("\n");
             sb.Append("  AppId: ").Append(AppId).Append("\n");
-            sb.Append("  EggsLimit: ").Append(EggsLimit).Append("\n");
-            sb.Append("  TokenLimit: ").Append(TokenLimit).Append("\n");
-            sb.Append("  CommonChestLimit: ").Append(CommonChestLimit).Append("\n");
-            sb.Append("  PremiumChestLimit: ").Append(PremiumChestLimit).Append("\n");
+            sb.Append("  Balance: ").Append(Balance).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

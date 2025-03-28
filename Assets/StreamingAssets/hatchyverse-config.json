@@ -1,6 +1,6 @@
 {
-  "hatchyverseAppId": "",
-  "apiBaseURL": "https://api.hatchyverse.com/dev",
-  "googleWebClientId": "",
+  "hatchyverseAppId": "4f34fea2e795b1c8925fa3747ab925e9",
+  "googleWebClientId": "1021023377720-2bdjk1qq2m76pscnd2os4ambmfturkbk.apps.googleusercontent.com",
+  "apiBaseURL": "https://api.hatchyverse.com",
   "apiKey": ""
 }

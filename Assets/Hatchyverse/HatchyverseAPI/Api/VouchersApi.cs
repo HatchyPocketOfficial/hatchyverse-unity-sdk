@@ -30,9 +30,9 @@ namespace HatchyverseAPI.Api
         /// 
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="voucherId"></param>
+        /// <param name="deleteBatchVouchersRequest"></param>
         /// <returns>MessageResponse</returns>
-        MessageResponse DeleteVoucher(string voucherId);
+        MessageResponse DeleteBatchVouchers(DeleteBatchVouchersRequest deleteBatchVouchersRequest);
 
         /// <summary>
         /// 
@@ -41,9 +41,45 @@ namespace HatchyverseAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="voucherId"></param>
+        /// <param name="deleteBatchVouchersRequest"></param>
         /// <returns>ApiResponse of MessageResponse</returns>
-        ApiResponse<MessageResponse> DeleteVoucherWithHttpInfo(string voucherId);
+        ApiResponse<MessageResponse> DeleteBatchVouchersWithHttpInfo(DeleteBatchVouchersRequest deleteBatchVouchersRequest);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="getBatchVoucherClaimSignatureRequest"></param>
+        /// <returns>BatchVoucherClaimSignature</returns>
+        BatchVoucherClaimSignature GetBatchVoucherClaimSignature(GetBatchVoucherClaimSignatureRequest getBatchVoucherClaimSignatureRequest);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="getBatchVoucherClaimSignatureRequest"></param>
+        /// <returns>ApiResponse of BatchVoucherClaimSignature</returns>
+        ApiResponse<BatchVoucherClaimSignature> GetBatchVoucherClaimSignatureWithHttpInfo(GetBatchVoucherClaimSignatureRequest getBatchVoucherClaimSignatureRequest);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="getDepositSignatureRequest"></param>
+        /// <returns>DepositSignature</returns>
+        DepositSignature GetDepositSignature(GetDepositSignatureRequest getDepositSignatureRequest);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="getDepositSignatureRequest"></param>
+        /// <returns>ApiResponse of DepositSignature</returns>
+        ApiResponse<DepositSignature> GetDepositSignatureWithHttpInfo(GetDepositSignatureRequest getDepositSignatureRequest);
         /// <summary>
         /// 
         /// </summary>
@@ -116,6 +152,42 @@ namespace HatchyverseAPI.Api
         /// 
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="giveVoucherWithApiKeyRequest"></param>
+        /// <returns>MessageResponse</returns>
+        MessageResponse GiveVoucherWithApiKey(GiveVoucherWithApiKeyRequest giveVoucherWithApiKeyRequest);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="giveVoucherWithApiKeyRequest"></param>
+        /// <returns>ApiResponse of MessageResponse</returns>
+        ApiResponse<MessageResponse> GiveVoucherWithApiKeyWithHttpInfo(GiveVoucherWithApiKeyRequest giveVoucherWithApiKeyRequest);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="syncDepositedAssetsRequest"></param>
+        /// <returns>MintMastersItem200Response</returns>
+        MintMastersItem200Response SyncDepositedAssets(SyncDepositedAssetsRequest syncDepositedAssetsRequest);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="syncDepositedAssetsRequest"></param>
+        /// <returns>ApiResponse of MintMastersItem200Response</returns>
+        ApiResponse<MintMastersItem200Response> SyncDepositedAssetsWithHttpInfo(SyncDepositedAssetsRequest syncDepositedAssetsRequest);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="transferVouchersRequest"></param>
         /// <returns>MessageResponse</returns>
         MessageResponse TransferVouchers(TransferVouchersRequest transferVouchersRequest);
@@ -146,10 +218,10 @@ namespace HatchyverseAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="voucherId"></param>
+        /// <param name="deleteBatchVouchersRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MessageResponse</returns>
-        System.Threading.Tasks.Task<MessageResponse> DeleteVoucherAsync(string voucherId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<MessageResponse> DeleteBatchVouchersAsync(DeleteBatchVouchersRequest deleteBatchVouchersRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// 
@@ -158,10 +230,56 @@ namespace HatchyverseAPI.Api
         /// 
         /// </remarks>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="voucherId"></param>
+        /// <param name="deleteBatchVouchersRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessageResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<MessageResponse>> DeleteVoucherWithHttpInfoAsync(string voucherId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<MessageResponse>> DeleteBatchVouchersWithHttpInfoAsync(DeleteBatchVouchersRequest deleteBatchVouchersRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="getBatchVoucherClaimSignatureRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of BatchVoucherClaimSignature</returns>
+        System.Threading.Tasks.Task<BatchVoucherClaimSignature> GetBatchVoucherClaimSignatureAsync(GetBatchVoucherClaimSignatureRequest getBatchVoucherClaimSignatureRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="getBatchVoucherClaimSignatureRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (BatchVoucherClaimSignature)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BatchVoucherClaimSignature>> GetBatchVoucherClaimSignatureWithHttpInfoAsync(GetBatchVoucherClaimSignatureRequest getBatchVoucherClaimSignatureRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="getDepositSignatureRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DepositSignature</returns>
+        System.Threading.Tasks.Task<DepositSignature> GetDepositSignatureAsync(GetDepositSignatureRequest getDepositSignatureRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="getDepositSignatureRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DepositSignature)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DepositSignature>> GetDepositSignatureWithHttpInfoAsync(GetDepositSignatureRequest getDepositSignatureRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -250,6 +368,52 @@ namespace HatchyverseAPI.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessageResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<MessageResponse>> GiveVoucherToUserWithHttpInfoAsync(GiveVoucherToUserRequest giveVoucherToUserRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="giveVoucherWithApiKeyRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of MessageResponse</returns>
+        System.Threading.Tasks.Task<MessageResponse> GiveVoucherWithApiKeyAsync(GiveVoucherWithApiKeyRequest giveVoucherWithApiKeyRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="giveVoucherWithApiKeyRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (MessageResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<MessageResponse>> GiveVoucherWithApiKeyWithHttpInfoAsync(GiveVoucherWithApiKeyRequest giveVoucherWithApiKeyRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="syncDepositedAssetsRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of MintMastersItem200Response</returns>
+        System.Threading.Tasks.Task<MintMastersItem200Response> SyncDepositedAssetsAsync(SyncDepositedAssetsRequest syncDepositedAssetsRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="syncDepositedAssetsRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (MintMastersItem200Response)</returns>
+        System.Threading.Tasks.Task<ApiResponse<MintMastersItem200Response>> SyncDepositedAssetsWithHttpInfoAsync(SyncDepositedAssetsRequest syncDepositedAssetsRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// 
         /// </summary>
@@ -421,11 +585,11 @@ namespace HatchyverseAPI.Api
         ///  
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="voucherId"></param>
+        /// <param name="deleteBatchVouchersRequest"></param>
         /// <returns>MessageResponse</returns>
-        public MessageResponse DeleteVoucher(string voucherId)
+        public MessageResponse DeleteBatchVouchers(DeleteBatchVouchersRequest deleteBatchVouchersRequest)
         {
-            HatchyverseAPI.Client.ApiResponse<MessageResponse> localVarResponse = DeleteVoucherWithHttpInfo(voucherId);
+            HatchyverseAPI.Client.ApiResponse<MessageResponse> localVarResponse = DeleteBatchVouchersWithHttpInfo(deleteBatchVouchersRequest);
             return localVarResponse.Data;
         }
 
@@ -433,17 +597,18 @@ namespace HatchyverseAPI.Api
         ///  
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="voucherId"></param>
+        /// <param name="deleteBatchVouchersRequest"></param>
         /// <returns>ApiResponse of MessageResponse</returns>
-        public HatchyverseAPI.Client.ApiResponse<MessageResponse> DeleteVoucherWithHttpInfo(string voucherId)
+        public HatchyverseAPI.Client.ApiResponse<MessageResponse> DeleteBatchVouchersWithHttpInfo(DeleteBatchVouchersRequest deleteBatchVouchersRequest)
         {
-            // verify the required parameter 'voucherId' is set
-            if (voucherId == null)
-                throw new HatchyverseAPI.Client.ApiException(400, "Missing required parameter 'voucherId' when calling VouchersApi->DeleteVoucher");
+            // verify the required parameter 'deleteBatchVouchersRequest' is set
+            if (deleteBatchVouchersRequest == null)
+                throw new HatchyverseAPI.Client.ApiException(400, "Missing required parameter 'deleteBatchVouchersRequest' when calling VouchersApi->DeleteBatchVouchers");
 
             HatchyverseAPI.Client.RequestOptions localVarRequestOptions = new HatchyverseAPI.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json"
             };
 
             // to determine the Accept header
@@ -457,15 +622,15 @@ namespace HatchyverseAPI.Api
             var localVarAccept = HatchyverseAPI.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("voucherId", HatchyverseAPI.Client.ClientUtils.ParameterToString(voucherId)); // path parameter
+            localVarRequestOptions.Data = deleteBatchVouchersRequest;
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Delete<MessageResponse>("/vouchers/{voucherId}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<MessageResponse>("/vouchers/batch", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DeleteVoucher", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeleteBatchVouchers", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -476,12 +641,12 @@ namespace HatchyverseAPI.Api
         ///  
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="voucherId"></param>
+        /// <param name="deleteBatchVouchersRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of MessageResponse</returns>
-        public async System.Threading.Tasks.Task<MessageResponse> DeleteVoucherAsync(string voucherId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<MessageResponse> DeleteBatchVouchersAsync(DeleteBatchVouchersRequest deleteBatchVouchersRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            var task = DeleteVoucherWithHttpInfoAsync(voucherId, cancellationToken);
+            var task = DeleteBatchVouchersWithHttpInfoAsync(deleteBatchVouchersRequest, cancellationToken);
 #if UNITY_EDITOR || !UNITY_WEBGL
             HatchyverseAPI.Client.ApiResponse<MessageResponse> localVarResponse = await task.ConfigureAwait(false);
 #else
@@ -494,19 +659,20 @@ namespace HatchyverseAPI.Api
         ///  
         /// </summary>
         /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="voucherId"></param>
+        /// <param name="deleteBatchVouchersRequest"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (MessageResponse)</returns>
-        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<MessageResponse>> DeleteVoucherWithHttpInfoAsync(string voucherId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<MessageResponse>> DeleteBatchVouchersWithHttpInfoAsync(DeleteBatchVouchersRequest deleteBatchVouchersRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            // verify the required parameter 'voucherId' is set
-            if (voucherId == null)
-                throw new HatchyverseAPI.Client.ApiException(400, "Missing required parameter 'voucherId' when calling VouchersApi->DeleteVoucher");
+            // verify the required parameter 'deleteBatchVouchersRequest' is set
+            if (deleteBatchVouchersRequest == null)
+                throw new HatchyverseAPI.Client.ApiException(400, "Missing required parameter 'deleteBatchVouchersRequest' when calling VouchersApi->DeleteBatchVouchers");
 
 
             HatchyverseAPI.Client.RequestOptions localVarRequestOptions = new HatchyverseAPI.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
+                "application/json"
             };
 
             // to determine the Accept header
@@ -521,12 +687,12 @@ namespace HatchyverseAPI.Api
             var localVarAccept = HatchyverseAPI.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.PathParameters.Add("voucherId", HatchyverseAPI.Client.ClientUtils.ParameterToString(voucherId)); // path parameter
+            localVarRequestOptions.Data = deleteBatchVouchersRequest;
 
 
             // make the HTTP request
 
-            var task = this.AsynchronousClient.DeleteAsync<MessageResponse>("/vouchers/{voucherId}", localVarRequestOptions, this.Configuration, cancellationToken);
+            var task = this.AsynchronousClient.DeleteAsync<MessageResponse>("/vouchers/batch", localVarRequestOptions, this.Configuration, cancellationToken);
 
 #if UNITY_EDITOR || !UNITY_WEBGL
             var localVarResponse = await task.ConfigureAwait(false);
@@ -536,7 +702,263 @@ namespace HatchyverseAPI.Api
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("DeleteVoucher", localVarResponse);
+                Exception _exception = this.ExceptionFactory("DeleteBatchVouchers", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="getBatchVoucherClaimSignatureRequest"></param>
+        /// <returns>BatchVoucherClaimSignature</returns>
+        public BatchVoucherClaimSignature GetBatchVoucherClaimSignature(GetBatchVoucherClaimSignatureRequest getBatchVoucherClaimSignatureRequest)
+        {
+            HatchyverseAPI.Client.ApiResponse<BatchVoucherClaimSignature> localVarResponse = GetBatchVoucherClaimSignatureWithHttpInfo(getBatchVoucherClaimSignatureRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="getBatchVoucherClaimSignatureRequest"></param>
+        /// <returns>ApiResponse of BatchVoucherClaimSignature</returns>
+        public HatchyverseAPI.Client.ApiResponse<BatchVoucherClaimSignature> GetBatchVoucherClaimSignatureWithHttpInfo(GetBatchVoucherClaimSignatureRequest getBatchVoucherClaimSignatureRequest)
+        {
+            // verify the required parameter 'getBatchVoucherClaimSignatureRequest' is set
+            if (getBatchVoucherClaimSignatureRequest == null)
+                throw new HatchyverseAPI.Client.ApiException(400, "Missing required parameter 'getBatchVoucherClaimSignatureRequest' when calling VouchersApi->GetBatchVoucherClaimSignature");
+
+            HatchyverseAPI.Client.RequestOptions localVarRequestOptions = new HatchyverseAPI.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = HatchyverseAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = HatchyverseAPI.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = getBatchVoucherClaimSignatureRequest;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<BatchVoucherClaimSignature>("/vouchers/claim/batch", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetBatchVoucherClaimSignature", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="getBatchVoucherClaimSignatureRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of BatchVoucherClaimSignature</returns>
+        public async System.Threading.Tasks.Task<BatchVoucherClaimSignature> GetBatchVoucherClaimSignatureAsync(GetBatchVoucherClaimSignatureRequest getBatchVoucherClaimSignatureRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            var task = GetBatchVoucherClaimSignatureWithHttpInfoAsync(getBatchVoucherClaimSignatureRequest, cancellationToken);
+#if UNITY_EDITOR || !UNITY_WEBGL
+            HatchyverseAPI.Client.ApiResponse<BatchVoucherClaimSignature> localVarResponse = await task.ConfigureAwait(false);
+#else
+            HatchyverseAPI.Client.ApiResponse<BatchVoucherClaimSignature> localVarResponse = await task;
+#endif
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="getBatchVoucherClaimSignatureRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (BatchVoucherClaimSignature)</returns>
+        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<BatchVoucherClaimSignature>> GetBatchVoucherClaimSignatureWithHttpInfoAsync(GetBatchVoucherClaimSignatureRequest getBatchVoucherClaimSignatureRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'getBatchVoucherClaimSignatureRequest' is set
+            if (getBatchVoucherClaimSignatureRequest == null)
+                throw new HatchyverseAPI.Client.ApiException(400, "Missing required parameter 'getBatchVoucherClaimSignatureRequest' when calling VouchersApi->GetBatchVoucherClaimSignature");
+
+
+            HatchyverseAPI.Client.RequestOptions localVarRequestOptions = new HatchyverseAPI.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = HatchyverseAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = HatchyverseAPI.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = getBatchVoucherClaimSignatureRequest;
+
+
+            // make the HTTP request
+
+            var task = this.AsynchronousClient.PostAsync<BatchVoucherClaimSignature>("/vouchers/claim/batch", localVarRequestOptions, this.Configuration, cancellationToken);
+
+#if UNITY_EDITOR || !UNITY_WEBGL
+            var localVarResponse = await task.ConfigureAwait(false);
+#else
+            var localVarResponse = await task;
+#endif
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetBatchVoucherClaimSignature", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="getDepositSignatureRequest"></param>
+        /// <returns>DepositSignature</returns>
+        public DepositSignature GetDepositSignature(GetDepositSignatureRequest getDepositSignatureRequest)
+        {
+            HatchyverseAPI.Client.ApiResponse<DepositSignature> localVarResponse = GetDepositSignatureWithHttpInfo(getDepositSignatureRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="getDepositSignatureRequest"></param>
+        /// <returns>ApiResponse of DepositSignature</returns>
+        public HatchyverseAPI.Client.ApiResponse<DepositSignature> GetDepositSignatureWithHttpInfo(GetDepositSignatureRequest getDepositSignatureRequest)
+        {
+            // verify the required parameter 'getDepositSignatureRequest' is set
+            if (getDepositSignatureRequest == null)
+                throw new HatchyverseAPI.Client.ApiException(400, "Missing required parameter 'getDepositSignatureRequest' when calling VouchersApi->GetDepositSignature");
+
+            HatchyverseAPI.Client.RequestOptions localVarRequestOptions = new HatchyverseAPI.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = HatchyverseAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = HatchyverseAPI.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = getDepositSignatureRequest;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<DepositSignature>("/vouchers/deposit/signature", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetDepositSignature", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="getDepositSignatureRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of DepositSignature</returns>
+        public async System.Threading.Tasks.Task<DepositSignature> GetDepositSignatureAsync(GetDepositSignatureRequest getDepositSignatureRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            var task = GetDepositSignatureWithHttpInfoAsync(getDepositSignatureRequest, cancellationToken);
+#if UNITY_EDITOR || !UNITY_WEBGL
+            HatchyverseAPI.Client.ApiResponse<DepositSignature> localVarResponse = await task.ConfigureAwait(false);
+#else
+            HatchyverseAPI.Client.ApiResponse<DepositSignature> localVarResponse = await task;
+#endif
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="getDepositSignatureRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (DepositSignature)</returns>
+        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<DepositSignature>> GetDepositSignatureWithHttpInfoAsync(GetDepositSignatureRequest getDepositSignatureRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'getDepositSignatureRequest' is set
+            if (getDepositSignatureRequest == null)
+                throw new HatchyverseAPI.Client.ApiException(400, "Missing required parameter 'getDepositSignatureRequest' when calling VouchersApi->GetDepositSignature");
+
+
+            HatchyverseAPI.Client.RequestOptions localVarRequestOptions = new HatchyverseAPI.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = HatchyverseAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = HatchyverseAPI.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = getDepositSignatureRequest;
+
+
+            // make the HTTP request
+
+            var task = this.AsynchronousClient.PostAsync<DepositSignature>("/vouchers/deposit/signature", localVarRequestOptions, this.Configuration, cancellationToken);
+
+#if UNITY_EDITOR || !UNITY_WEBGL
+            var localVarResponse = await task.ConfigureAwait(false);
+#else
+            var localVarResponse = await task;
+#endif
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GetDepositSignature", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1017,6 +1439,262 @@ namespace HatchyverseAPI.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GiveVoucherToUser", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="giveVoucherWithApiKeyRequest"></param>
+        /// <returns>MessageResponse</returns>
+        public MessageResponse GiveVoucherWithApiKey(GiveVoucherWithApiKeyRequest giveVoucherWithApiKeyRequest)
+        {
+            HatchyverseAPI.Client.ApiResponse<MessageResponse> localVarResponse = GiveVoucherWithApiKeyWithHttpInfo(giveVoucherWithApiKeyRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="giveVoucherWithApiKeyRequest"></param>
+        /// <returns>ApiResponse of MessageResponse</returns>
+        public HatchyverseAPI.Client.ApiResponse<MessageResponse> GiveVoucherWithApiKeyWithHttpInfo(GiveVoucherWithApiKeyRequest giveVoucherWithApiKeyRequest)
+        {
+            // verify the required parameter 'giveVoucherWithApiKeyRequest' is set
+            if (giveVoucherWithApiKeyRequest == null)
+                throw new HatchyverseAPI.Client.ApiException(400, "Missing required parameter 'giveVoucherWithApiKeyRequest' when calling VouchersApi->GiveVoucherWithApiKey");
+
+            HatchyverseAPI.Client.RequestOptions localVarRequestOptions = new HatchyverseAPI.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = HatchyverseAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = HatchyverseAPI.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = giveVoucherWithApiKeyRequest;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<MessageResponse>("/vouchers/apikey/give", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GiveVoucherWithApiKey", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="giveVoucherWithApiKeyRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of MessageResponse</returns>
+        public async System.Threading.Tasks.Task<MessageResponse> GiveVoucherWithApiKeyAsync(GiveVoucherWithApiKeyRequest giveVoucherWithApiKeyRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            var task = GiveVoucherWithApiKeyWithHttpInfoAsync(giveVoucherWithApiKeyRequest, cancellationToken);
+#if UNITY_EDITOR || !UNITY_WEBGL
+            HatchyverseAPI.Client.ApiResponse<MessageResponse> localVarResponse = await task.ConfigureAwait(false);
+#else
+            HatchyverseAPI.Client.ApiResponse<MessageResponse> localVarResponse = await task;
+#endif
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="giveVoucherWithApiKeyRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (MessageResponse)</returns>
+        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<MessageResponse>> GiveVoucherWithApiKeyWithHttpInfoAsync(GiveVoucherWithApiKeyRequest giveVoucherWithApiKeyRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'giveVoucherWithApiKeyRequest' is set
+            if (giveVoucherWithApiKeyRequest == null)
+                throw new HatchyverseAPI.Client.ApiException(400, "Missing required parameter 'giveVoucherWithApiKeyRequest' when calling VouchersApi->GiveVoucherWithApiKey");
+
+
+            HatchyverseAPI.Client.RequestOptions localVarRequestOptions = new HatchyverseAPI.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = HatchyverseAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = HatchyverseAPI.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = giveVoucherWithApiKeyRequest;
+
+
+            // make the HTTP request
+
+            var task = this.AsynchronousClient.PostAsync<MessageResponse>("/vouchers/apikey/give", localVarRequestOptions, this.Configuration, cancellationToken);
+
+#if UNITY_EDITOR || !UNITY_WEBGL
+            var localVarResponse = await task.ConfigureAwait(false);
+#else
+            var localVarResponse = await task;
+#endif
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("GiveVoucherWithApiKey", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="syncDepositedAssetsRequest"></param>
+        /// <returns>MintMastersItem200Response</returns>
+        public MintMastersItem200Response SyncDepositedAssets(SyncDepositedAssetsRequest syncDepositedAssetsRequest)
+        {
+            HatchyverseAPI.Client.ApiResponse<MintMastersItem200Response> localVarResponse = SyncDepositedAssetsWithHttpInfo(syncDepositedAssetsRequest);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="syncDepositedAssetsRequest"></param>
+        /// <returns>ApiResponse of MintMastersItem200Response</returns>
+        public HatchyverseAPI.Client.ApiResponse<MintMastersItem200Response> SyncDepositedAssetsWithHttpInfo(SyncDepositedAssetsRequest syncDepositedAssetsRequest)
+        {
+            // verify the required parameter 'syncDepositedAssetsRequest' is set
+            if (syncDepositedAssetsRequest == null)
+                throw new HatchyverseAPI.Client.ApiException(400, "Missing required parameter 'syncDepositedAssetsRequest' when calling VouchersApi->SyncDepositedAssets");
+
+            HatchyverseAPI.Client.RequestOptions localVarRequestOptions = new HatchyverseAPI.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = HatchyverseAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = HatchyverseAPI.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = syncDepositedAssetsRequest;
+
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<MintMastersItem200Response>("/vouchers/deposit/sync", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SyncDepositedAssets", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="syncDepositedAssetsRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of MintMastersItem200Response</returns>
+        public async System.Threading.Tasks.Task<MintMastersItem200Response> SyncDepositedAssetsAsync(SyncDepositedAssetsRequest syncDepositedAssetsRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            var task = SyncDepositedAssetsWithHttpInfoAsync(syncDepositedAssetsRequest, cancellationToken);
+#if UNITY_EDITOR || !UNITY_WEBGL
+            HatchyverseAPI.Client.ApiResponse<MintMastersItem200Response> localVarResponse = await task.ConfigureAwait(false);
+#else
+            HatchyverseAPI.Client.ApiResponse<MintMastersItem200Response> localVarResponse = await task;
+#endif
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="HatchyverseAPI.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="syncDepositedAssetsRequest"></param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (MintMastersItem200Response)</returns>
+        public async System.Threading.Tasks.Task<HatchyverseAPI.Client.ApiResponse<MintMastersItem200Response>> SyncDepositedAssetsWithHttpInfoAsync(SyncDepositedAssetsRequest syncDepositedAssetsRequest, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            // verify the required parameter 'syncDepositedAssetsRequest' is set
+            if (syncDepositedAssetsRequest == null)
+                throw new HatchyverseAPI.Client.ApiException(400, "Missing required parameter 'syncDepositedAssetsRequest' when calling VouchersApi->SyncDepositedAssets");
+
+
+            HatchyverseAPI.Client.RequestOptions localVarRequestOptions = new HatchyverseAPI.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = HatchyverseAPI.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = HatchyverseAPI.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = syncDepositedAssetsRequest;
+
+
+            // make the HTTP request
+
+            var task = this.AsynchronousClient.PostAsync<MintMastersItem200Response>("/vouchers/deposit/sync", localVarRequestOptions, this.Configuration, cancellationToken);
+
+#if UNITY_EDITOR || !UNITY_WEBGL
+            var localVarResponse = await task.ConfigureAwait(false);
+#else
+            var localVarResponse = await task;
+#endif
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("SyncDepositedAssets", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
